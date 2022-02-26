@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// https://www.youtube.com/watch?v=_QajrabyTJc
 public class MouseLook : MonoBehaviour
 {
 
@@ -10,8 +12,6 @@ public class MouseLook : MonoBehaviour
     public Transform playerBody;
 
     float xRotation = 0f;
-
-    public GameObject directionOb;
 
 
     // Start is called before the first frame update

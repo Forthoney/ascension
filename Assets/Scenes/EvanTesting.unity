@@ -220,9 +220,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2aafdedcc05d8e4f8cf6c82653cba4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 100
+  mouseSensitivity: 300
   playerBody: {fileID: 1465129015}
-  directionOb: {fileID: 1732849075}
 --- !u!1 &411460887
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,6 +730,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movement: {fileID: 1465129018}
   look: {fileID: 59815048}
+  weapon: {fileID: 0}
 --- !u!114 &1465129018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -744,7 +744,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curState: 0
-  dashSpeed: 20
+  dashSpeed: 15
+  wallDashSpeed: 5
+  dashCooldown: 5
   curVelocity: {x: 0, y: 0, z: 0}
   body: {fileID: 0}
   controller: {fileID: 1465129020}

@@ -13,13 +13,19 @@ public class PlayerMovement : MonoBehaviour
 
     public MoveState curState = MoveState.DEFAULT; 
 
-    public float dashSpeed = 20.0f;
+    public float dashSpeed = 15.0f;
+    public float wallDashSpeed = 10.0f;
+    public float dashCooldown = 5.0f;
 
     public Vector3 curVelocity = new Vector3(0, 0, 0);
 
 
     public Rigidbody body;
-    public CharacterController controller; 
+    public CharacterController controller;
+
+
+    
+    private float curDashCooldown = 0;
 
     
     private void FixedUpdate()
@@ -27,6 +33,11 @@ public class PlayerMovement : MonoBehaviour
         if (curState == MoveState.DEFAULT)
         {
             controller.Move(curVelocity * Time.fixedDeltaTime);
+
+            if (curDashCooldown >= 0)
+            {
+                curDashCooldown -= Time.fixedDeltaTime;
+            }
         }
         else if (curState == MoveState.WALL)
         {
@@ -38,10 +49,24 @@ public class PlayerMovement : MonoBehaviour
     public void Dash(Vector3 direction)
     {
         ///body.AddForce(Camera.main.transform.forward * dashSpeed);
-        curVelocity = direction * dashSpeed;
-
-        if (curState == MoveState.WALL)
+        
+        if (curState == MoveState.DEFAULT)
         {
+            if (curDashCooldown <= 0)
+            {
+                curVelocity = direction * dashSpeed;
+                curDashCooldown = dashCooldown;
+            }
+            else
+            {
+                print("on cooldown !");
+            }
+        }
+        else if (curState == MoveState.WALL)
+        {
+            curVelocity = direction * wallDashSpeed;
+
+            curDashCooldown = 0; 
             curState = MoveState.DEFAULT;
         }
     }
