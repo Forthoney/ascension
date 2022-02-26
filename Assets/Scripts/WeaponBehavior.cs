@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class WeaponBehavior : MonoBehaviour
 {
-    public Rigidbody projectile;
-    public float knockback = 10f;
+    public const float knockback = 10f;
+    Rigidbody projectile;
     float bulletSpeed = 10f;
-
     float currentCooldown = 0f;
 
     // Start is called before the first frame update
