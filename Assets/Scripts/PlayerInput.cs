@@ -6,15 +6,21 @@ public class PlayerInput : MonoBehaviour
 {
 
     public PlayerMovement movement;
-    public MouseLook look; 
+    public MouseLook look;
+    public WeaponBehavior weapon; 
 
 
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetButtonDown("Dash"))
         {
             movement.Dash(-look.GetLookDirection());
+        }
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+
         }
     }
 }

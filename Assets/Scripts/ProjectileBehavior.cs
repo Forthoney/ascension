@@ -19,6 +19,6 @@ public class ProjectileBehavior : MonoBehaviour
 
     // Moves the projectile forward.
     void moveProjectile() {
-        this.transform.position += this.transform.forward * Time.deltaTime * projectileSpeed;
+        transform.position += transform.forward * Time.deltaTime * projectileSpeed;
     }
 }
