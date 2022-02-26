@@ -11,7 +11,7 @@ public class EnemyShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (this.IsAiming && this.weapon.canShoot()) {
+        if (this.IsAiming && this.weapon.CanShoot()) {
             ShootWeapon();
         }
     }
