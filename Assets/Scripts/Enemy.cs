@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     private int health;
     private const float movementSpeed = 5f;
     public WeaponBehavior weapon;
+    public NavMesh enemy;
     public Transform Player;
     
     // Start is called before the first frame update
@@ -19,7 +20,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.SetDestination(Player.position);
+        enemy.SetDestination(Player.position);
         if (this.IsAiming && this.weapon.canShoot()) {
             ShootWeapon();
         }
