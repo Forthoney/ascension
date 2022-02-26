@@ -5,8 +5,7 @@ using UnityEngine;
 public class WeaponBehavior : MonoBehaviour
 {
     public const float knockback = 10f;
-    Rigidbody projectile;
-    float bulletSpeed = 10f;
+    [SerializeField] GameObject projectile;
     float currentCooldown = 0f;
 
     // Start is called before the first frame update
@@ -33,8 +32,7 @@ public class WeaponBehavior : MonoBehaviour
 
     void shoot()
     {
-        Rigidbody newBullet = Instantiate(projectile, transform.position, transform.rotation);
-        newBullet.velocity = transform.TransformDirection(Vector3.forward * bulletSpeed);
+        Instantiate(projectile, transform.position, transform.rotation);
         currentCooldown = 1f;
     }
 
