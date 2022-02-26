@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
     private int health;
     private const float movementSpeed = 5f;
-    private WeaponBehavior weapon;
+    public WeaponBehavior weapon;
+    public Transform Player;
     
     // Start is called before the first frame update
     void Start()
@@ -17,19 +19,18 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.movePattern();
-        this.aimAtPlayer();
-        if (this.isAiming && this.weapon.canShoot()) {
-            this.shootWeapon();
+        this.SetDestination(Player.position);
+        if (this.IsAiming && this.weapon.canShoot()) {
+            ShootWeapon();
         }
     }
 
-    private void shootWeapon() {
+    private void ShootWeapon() {
         this.weapon.shoot();
-        this.knockback(this.weapon.recoil);
+        this.knockback(this.weapon.knockback);
     }
 
-    private void knockback(float recoil) {
+    private void Knockback(float recoil) {
         float duration = 2f;
 
         while (duration > 0) {
@@ -38,11 +39,11 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private bool isAiming() {
+    private bool IsAiming() {
+        return true;
     }
 
-    private void movePattern() {
-        
+    public void TakeDamage(int damage) {
+        this.health -= damage;
     }
-
 }
