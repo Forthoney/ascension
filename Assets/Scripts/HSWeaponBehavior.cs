@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// Watch video: https://www.youtube.com/watch?v=THnivyG0Mvo
 public class HSWeaponBehavior : MonoBehaviour
 {
     float currentCooldown = 0f;
