@@ -3,24 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy : MonoBehaviour
+public class EnemyShoot : MonoBehaviour
 {
-    private int health;
-    private const float movementSpeed = 5f;
     public WeaponBehavior weapon;
-    public NavMesh enemy;
     public Transform Player;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        this.health = 100;
-    }
 
     // Update is called once per frame
     void Update()
     {
-        enemy.SetDestination(Player.position);
         if (this.IsAiming && this.weapon.canShoot()) {
             ShootWeapon();
         }
@@ -42,9 +32,5 @@ public class Enemy : MonoBehaviour
 
     private bool IsAiming() {
         return true;
-    }
-
-    public void TakeDamage(int damage) {
-        this.health -= damage;
     }
 }
