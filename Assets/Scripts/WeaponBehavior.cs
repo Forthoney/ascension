@@ -17,33 +17,33 @@ public class WeaponBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        updateCooldown();
+        UpdateCooldown();
 
-        // This should be removed as shoot() will be called by the player/enemy.
-        if (canShoot()) 
+        // This should be removed as Shoot() will be called by the player/enemy.
+        if (CanShoot()) 
         {
             if (Input.GetButtonDown("Fire1"))
             {
-                shoot();
+                Shoot();
             }
         }
         
     }
 
-    void shoot()
-    {
-        Instantiate(projectile, transform.position, transform.rotation);
-        currentCooldown = 1f;
-    }
-
-    void updateCooldown() {
-        if (!canShoot()) {
+    void UpdateCooldown() {
+        if (!CanShoot()) {
             currentCooldown = currentCooldown - Time.deltaTime;
             Debug.Log(currentCooldown);
         }
     }
 
-    bool canShoot()
+    public void Shoot()
+    {
+        Instantiate(projectile, transform.position, transform.rotation);
+        currentCooldown = 1f;
+    }
+
+    public bool CanShoot()
     {
         return (currentCooldown <= 0f);
     }

@@ -14,11 +14,11 @@ public class ProjectileBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moveProjectile();
+        MoveProjectile();
     }
 
     // Moves the projectile forward.
-    void moveProjectile() {
+    void MoveProjectile() {
         transform.position += transform.forward * Time.deltaTime * projectileSpeed;
     }
 }
