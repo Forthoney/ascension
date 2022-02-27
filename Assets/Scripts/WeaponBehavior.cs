@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class WeaponBehavior : MonoBehaviour
 {
-    public const float knockback = 10f;
+    private float knockback = 10f;
     [SerializeField] GameObject projectile;
-    float currentCooldown = 0f;
+    private float currentCooldown = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -48,4 +48,7 @@ public class WeaponBehavior : MonoBehaviour
         return (currentCooldown <= 0f);
     }
 
+    public float getKnockback() {
+        return knockback;
+    }
 }

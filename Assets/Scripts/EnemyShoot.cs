@@ -1,36 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class EnemyShoot : MonoBehaviour
 {
+    public float shootRange = 30f;
+    
     public WeaponBehavior weapon;
-    public Transform Player;
 
     // Update is called once per frame
     void Update()
     {
-        if (this.IsAiming && this.weapon.CanShoot()) {
+        if (this.IsAiming() && weapon.CanShoot()) {
             ShootWeapon();
         }
     }
 
-    private void ShootWeapon() {
-        this.weapon.shoot();
-        this.knockback(this.weapon.knockback);
+    void ShootWeapon() {
+        weapon.Shoot();
+        this.Knockback(weapon.getKnockback());
     }
 
-    private void Knockback(float recoil) {
+    void Knockback(float recoil) {
         float duration = 2f;
 
         while (duration > 0) {
-            this.transform.position -= this.transform.forward * Time.deltaTime * recoil;
+            transform.position -= transform.forward * Time.deltaTime * recoil;
             duration -= Time.deltaTime;
         }
     }
 
-    private bool IsAiming() {
-        return true;
+    bool IsAiming() {
+        return Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hitinfo, shootRange);
     }
 }
