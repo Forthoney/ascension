@@ -7,7 +7,7 @@ public class PlayerInput : MonoBehaviour
 
     public PlayerMovement movement;
     public MouseLook look;
-    public WeaponBehavior weapon; 
+    public HSWeaponBehavior weapon; 
 
 
 
@@ -20,7 +20,11 @@ public class PlayerInput : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-
+            if (weapon.CanShoot())
+            {
+                weapon.Shoot();
+                movement.Knockback(look.GetLookDirection(), 10);
+            }
         }
     }
 }
