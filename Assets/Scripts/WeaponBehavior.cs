@@ -4,6 +4,8 @@ using UnityEngine;
 
 public abstract class WeaponBehavior : MonoBehaviour
 {
+
+    public float defaultCooldown = 0.25f; 
     float currentCooldown;
     // Start is called before the first frame update
     void Start()
@@ -27,7 +29,7 @@ public abstract class WeaponBehavior : MonoBehaviour
 
     protected void ResetCooldown()
     {
-        currentCooldown = 1f;
+        currentCooldown = defaultCooldown;
     }
 
     public abstract void Shoot();
