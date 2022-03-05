@@ -7,7 +7,7 @@ public class PlayerInput : MonoBehaviour
 
     public PlayerMovement movement;
     public MouseLook look;
-    public WeaponBehavior weapon; 
+    public HSWeaponBehavior weapon; 
 
 
 
