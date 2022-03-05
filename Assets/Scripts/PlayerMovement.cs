@@ -72,6 +72,16 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
+    public void SetVelocity(Vector3 velocity)
+    {
+        curVelocity = velocity; 
+    }
+
+    public void addVelocity(Vector3 velocityAdd)
+    {
+        curVelocity += velocityAdd;
+    }
+
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         
