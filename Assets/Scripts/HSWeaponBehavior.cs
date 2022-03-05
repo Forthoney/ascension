@@ -40,7 +40,7 @@ public class HSWeaponBehavior : MonoBehaviour
         }
     }
 
-    public void Shoot()
+    public async void Shoot()
     {
         // Bit shift the index of the layer (2, the ignore raycast layer) to get a bit mask
         int layerMask = 1 << 2;
@@ -52,8 +52,8 @@ public class HSWeaponBehavior : MonoBehaviour
         bool hasHit = Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range, layerMask);
 
         if (hasHit) {
-            Debug.Log(hit.transform.name);
-            if (hit.transform.name == "Enemy") {
+            Debug.Log(hit.transform.tag);
+            if (hit.transform.tag == "Enemy") {
                 MortalInfo hitStats = hit.transform.GetComponent<MortalInfo>();
                 hitStats.TakeDamage(this.damage);
             }
