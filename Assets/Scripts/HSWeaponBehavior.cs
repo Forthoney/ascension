@@ -40,7 +40,7 @@ public class HSWeaponBehavior : MonoBehaviour
         }
     }
 
-    public async void Shoot()
+    public void Shoot()
     {
         // Bit shift the index of the layer (2, the ignore raycast layer) to get a bit mask
         int layerMask = 1 << 2;
