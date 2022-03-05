@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootRange: 30
-  weapon: {fileID: 0}
+  weapon: {fileID: 3659407004977743351}
 --- !u!114 &7646851648701655367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,9 +156,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cc7458c8acf22041932a90762103603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRange: 40
+  viewRange: 30
+  stopRange: 5
   turnRate: 5
-  moveRate: 5
+  moveRate: 1
   player: {fileID: 0}
 --- !u!114 &3952039649209159464
 MonoBehaviour:
@@ -239,3 +240,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4310191179500393480, guid: 03379fa4b03b048399a1b118963fcc2f, type: 3}
   m_PrefabInstance: {fileID: 7646851648471706293}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3659407004977743351 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6401796808133209922, guid: 03379fa4b03b048399a1b118963fcc2f, type: 3}
+  m_PrefabInstance: {fileID: 7646851648471706293}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a6a6eeff8ff4dfa920ba2218042bbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

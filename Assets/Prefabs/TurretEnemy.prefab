@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootRange: 60
-  weapon: {fileID: 0}
+  weapon: {fileID: 1258633387688390263}
 --- !u!114 &814179692861037673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,3 +239,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4310191179500393480, guid: 03379fa4b03b048399a1b118963fcc2f, type: 3}
   m_PrefabInstance: {fileID: 5305328470796960053}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1258633387688390263 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6401796808133209922, guid: 03379fa4b03b048399a1b118963fcc2f, type: 3}
+  m_PrefabInstance: {fileID: 5305328470796960053}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a6a6eeff8ff4dfa920ba2218042bbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

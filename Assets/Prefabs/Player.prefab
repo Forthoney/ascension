@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 8329992066975207518}
   - component: {fileID: 8329992066975207515}
   - component: {fileID: 8329992066975207512}
+  - component: {fileID: 95947144}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -128,7 +129,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 2
-  m_Radius: 0.5
+  m_Radius: 0.53
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -168,7 +169,20 @@ MonoBehaviour:
   curVelocity: {x: 0, y: 0, z: 0}
   body: {fileID: 0}
   controller: {fileID: 8329992066975207518}
-  wallHitCooldown: 0.2
+  wallHitCooldown: 0.15
+--- !u!114 &95947144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8329992066975207508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7291da9470db1ee38bed3eb263330e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  INITIAL_HEALTH: 100
 --- !u!1 &8329992067701128422
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,8 +328,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smooth: 6
   swayMultiplier: 3
-  amplitute: 5
-  period: 2
+  amplitute: 0
+  period: 0
 --- !u!1001 &1920963990472597069
 PrefabInstance:
   m_ObjectHideFlags: 0
