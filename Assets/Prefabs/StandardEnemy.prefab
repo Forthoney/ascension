@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 7646851648701655369}
   - component: {fileID: 7646851648701655368}
   - component: {fileID: 7646851648701655367}
+  - component: {fileID: 3952039649209159464}
   m_Layer: 0
   m_Name: StandardEnemy
   m_TagString: Enemy
@@ -142,7 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootRange: 30
-  weapon: {fileID: 4136637116692652541}
+  weapon: {fileID: 0}
 --- !u!114 &7646851648701655367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,6 +160,19 @@ MonoBehaviour:
   turnRate: 5
   moveRate: 5
   player: {fileID: 0}
+--- !u!114 &3952039649209159464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7646851648701655366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7291da9470db1ee38bed3eb263330e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  INITIAL_HEALTH: 100
 --- !u!1001 &7646851648471706293
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -225,14 +239,3 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4310191179500393480, guid: 03379fa4b03b048399a1b118963fcc2f, type: 3}
   m_PrefabInstance: {fileID: 7646851648471706293}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4136637116692652541 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6014375355935968072, guid: 03379fa4b03b048399a1b118963fcc2f, type: 3}
-  m_PrefabInstance: {fileID: 7646851648471706293}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 926e3444505bf4ca2a1055c697e49822, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
