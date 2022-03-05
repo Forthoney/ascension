@@ -5,7 +5,6 @@ using UnityEngine;
 public abstract class WeaponBehavior : MonoBehaviour
 {
     float currentCooldown;
-    public float knockback = 10f;
     // Start is called before the first frame update
     void Start()
     {

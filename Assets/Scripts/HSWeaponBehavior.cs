@@ -10,7 +10,7 @@ public class HSWeaponBehavior : WeaponBehavior
     public float range = 100f;
     public Camera fpsCam;
 
-    float knockback = 0f;
+    float knockback = 10f;
 
     public override void Shoot()
     {
