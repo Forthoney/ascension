@@ -4,33 +4,37 @@ using UnityEngine;
 
 public class WeaponMovement : MonoBehaviour
 {
-    public float smooth;
-    public float swayMultiplier;
-
-    float mouseX; 
-    float mouseY;
+    [Header("Movement Sway Settings")]
+    [SerializeField] private float smooth;
+    [SerializeField] private float swayMultiplier;
+    float mouseX, mouseY;
     Quaternion targetRotation;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("Idle Sway Settings")]
+    [SerializeField] private float amplitute;
+    [SerializeField] private float period;
 
     // Update is called once per frame
-    void Update() {
-        targetRotation = calcRotation();
-        transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRotation, smooth * Time.deltaTime);
+    void Update()
+    {
+        transform.localRotation = MovementSway(transform.localRotation);
+        transform.position += IdleSway();
     }
 
-    Quaternion calcRotation() {
+    Quaternion MovementSway(Quaternion localRotation)
+    {
         mouseX = Input.GetAxisRaw("Mouse X") * swayMultiplier;
         mouseY = Input.GetAxisRaw("Mouse Y") * swayMultiplier;
 
         Quaternion rotationX = Quaternion.AngleAxis(-mouseY, Vector3.right);
         Quaternion rotationY = Quaternion.AngleAxis(mouseX, Vector3.up);
-
-        return rotationX * rotationY;
+        return Quaternion.Slerp(localRotation, rotationX * rotationY, smooth * Time.deltaTime);
     }
 
+    Vector3 IdleSway()
+    {
+        float theta = Time.timeSinceLevelLoad / period;
+        float distance = amplitute * Mathf.Sin(theta);
+        return Vector3.up * distance;
+    }
 }
