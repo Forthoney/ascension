@@ -23,6 +23,7 @@ public class PlayerInput : MonoBehaviour
             if (weapon.CanShoot())
             {
                 weapon.Shoot();
+                movement.Knockback(look.GetLookDirection(), 10);
             }
         }
     }
