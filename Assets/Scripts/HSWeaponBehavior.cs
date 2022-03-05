@@ -7,7 +7,7 @@ using UnityEngine;
 public class HSWeaponBehavior : MonoBehaviour
 {
     float currentCooldown = 0f;
-    public float damage = 10f;
+    public int damage = 10;
     public float range = 100f;
     public Camera fpsCam;
 
@@ -42,11 +42,21 @@ public class HSWeaponBehavior : MonoBehaviour
 
     public void Shoot()
     {
+        // Bit shift the index of the layer (2, the ignore raycast layer) to get a bit mask
+        int layerMask = 1 << 2;
+
+        // We want to cast rays again every collider that is NOT in layer 2. So we inverse the bitmap.
+        layerMask = ~layerMask;
+
         RaycastHit hit;
-        bool hasHit = Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range);
+        bool hasHit = Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range, layerMask);
+
         if (hasHit) {
-            // Simply prints the name of the hit object. Will later handle this and decide to create damage...
             Debug.Log(hit.transform.name);
+            if (hit.transform.name == "Enemy") {
+                MortalInfo hitStats = hit.transform.GetComponent<MortalInfo>();
+                hitStats.TakeDamage(this.damage);
+            }
         }
     }
 
