@@ -12,7 +12,7 @@ public class MortalInfo : MonoBehaviour
         health = INITIAL_HEALTH;
     }
 
-    void TakeDamage(int amount) {
+    public void TakeDamage(int amount) {
         health -= amount;
         if (health <= 0) {
             Death();
