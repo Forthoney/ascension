@@ -20,7 +20,10 @@ public class PlayerInput : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-
+            if (weapon.CanShoot())
+            {
+                weapon.Shoot();
+            }
         }
     }
 }
