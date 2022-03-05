@@ -2,54 +2,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponBehavior : MonoBehaviour
+public abstract class WeaponBehavior : MonoBehaviour
 {
-    private float knockback = 10f;
-    [SerializeField] GameObject projectile;
-    private float currentCooldown = 0f;
-
+    float currentCooldown;
     // Start is called before the first frame update
     void Start()
     {
-
+        currentCooldown = 0f;
     }
 
     // Update is called once per frame
     void Update()
     {
         UpdateCooldown();
-
-        // This should be removed as Shoot() will be called by the player/enemy.
-        if (CanShoot()) 
-        {
-            //if (Input.GetButtonDown("Fire1"))
-            if (false)
-            {
-                Shoot();
-            }
-        }
-        
     }
 
-    void UpdateCooldown() {
-        if (!CanShoot()) {
-            currentCooldown = currentCooldown - Time.deltaTime;
-            Debug.Log(currentCooldown);
-        }
-    }
-
-    public void Shoot()
+    void UpdateCooldown()
     {
-        Instantiate(projectile, transform.position, transform.rotation);
+        if (!CanShoot())
+        {
+            currentCooldown = currentCooldown - Time.deltaTime;
+        }
+    }
+
+    protected void ResetCooldown()
+    {
         currentCooldown = 1f;
     }
+
+    public abstract void Shoot();
+    public abstract float GetKnockback();
 
     public bool CanShoot()
     {
         return (currentCooldown <= 0f);
-    }
-
-    public float getKnockback() {
-        return knockback;
     }
 }

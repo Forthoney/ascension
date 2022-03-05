@@ -10,16 +10,10 @@ public class ScreenShake : MonoBehaviour
      * awkward shift when the screen shake is triggered.
      */
 
-    private void Update()
+    public void StartScreenShake(float duration, float magnitude)
     {
-
-        //This is only for testing whether or not is works for now 
-        if (Input.GetKey(KeyCode.H))
-        {
-           StartCoroutine(Shake(.15f, .4f));
-        }
+        StartCoroutine(Shake(duration, magnitude));
     }
-
 
     public IEnumerator Shake(float duration, float magnitude)
     {

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4310191179500393481}
   - component: {fileID: 4310191179500393482}
   - component: {fileID: 4310191179500393483}
-  - component: {fileID: 6014375355935968072}
+  - component: {fileID: 6401796808133209922}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -96,7 +96,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6014375355935968072
+--- !u!114 &6401796808133209922
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,7 +105,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 4310191179500393476}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 926e3444505bf4ca2a1055c697e49822, type: 3}
+  m_Script: {fileID: 11500000, guid: b3a6a6eeff8ff4dfa920ba2218042bbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 0}
+  knockback: 10
+  projectile: {fileID: 8674076452439544694, guid: 5d8516f3a68a74a9e9c5ab89c3dfda80, type: 3}
