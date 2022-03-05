@@ -10,8 +10,6 @@ public class HSWeaponBehavior : WeaponBehavior
     public float range = 100f;
     public Camera fpsCam;
 
-    float knockback = 10f;
-
     public override void Shoot()
     {
         // Bit shift the index of the layer (2, the ignore raycast layer) to get a bit mask
@@ -34,8 +32,8 @@ public class HSWeaponBehavior : WeaponBehavior
         ResetCooldown();
     }
 
-    public override float GetKnockback()
+    override public float GetKnockback()
     {
-        return knockback;
+        return 10f;
     }
 }
