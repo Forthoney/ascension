@@ -63,3 +63,5 @@ UserSettings/EditorUserSettings.asset
 Packages/manifest.json
 Packages/packages-lock.json
 .vscode/settings.json
+Packages/manifest.json
+Packages/packages-lock.json
