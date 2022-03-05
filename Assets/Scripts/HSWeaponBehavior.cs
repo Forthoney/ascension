@@ -21,22 +21,11 @@ public class HSWeaponBehavior : MonoBehaviour
     void Update()
     {
         UpdateCooldown();
-
-        // This should be removed as Shoot() will be called by the player/enemy.
-        if (CanShoot()) 
-        {
-            if (Input.GetButtonDown("Fire1"))
-            {
-                Shoot();
-            }
-        }
-        
     }
 
     void UpdateCooldown() {
         if (!CanShoot()) {
             currentCooldown = currentCooldown - Time.deltaTime;
-            Debug.Log(currentCooldown);
         }
     }
 
@@ -58,6 +47,8 @@ public class HSWeaponBehavior : MonoBehaviour
                 hitStats.TakeDamage(this.damage);
             }
         }
+
+        currentCooldown = 1f;
     }
 
     public bool CanShoot()
