@@ -7,9 +7,7 @@ public class PlayerInput : MonoBehaviour
 
     public PlayerMovement movement;
     public MouseLook look;
-    public HSWeaponBehavior weapon; 
-
-
+    public WeaponBehavior weapon; 
 
     private void Update()
     {

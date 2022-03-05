@@ -18,7 +18,7 @@ public class EnemyShoot : MonoBehaviour
 
     void ShootWeapon() {
         weapon.Shoot();
-        this.Knockback(weapon.getKnockback());
+        this.Knockback(weapon.GetKnockback());
     }
 
     void Knockback(float recoil) {
