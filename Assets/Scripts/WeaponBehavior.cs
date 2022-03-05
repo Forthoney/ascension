@@ -22,7 +22,8 @@ public class WeaponBehavior : MonoBehaviour
         // This should be removed as Shoot() will be called by the player/enemy.
         if (CanShoot()) 
         {
-            if (Input.GetButtonDown("Fire1"))
+            //if (Input.GetButtonDown("Fire1"))
+            if (false)
             {
                 Shoot();
             }
