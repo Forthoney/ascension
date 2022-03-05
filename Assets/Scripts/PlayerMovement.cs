@@ -27,7 +27,10 @@ public class PlayerMovement : MonoBehaviour
     
     private float curDashCooldown = 0;
 
-    
+    public float wallHitCooldown = 0.2f;
+    private float curWallHitCooldown = 0.0f;
+
+
     private void FixedUpdate()
     {
         if (curState == MoveState.DEFAULT)
@@ -38,6 +41,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 curDashCooldown -= Time.fixedDeltaTime;
             }
+
+            curWallHitCooldown -= Time.fixedDeltaTime; 
         }
         else if (curState == MoveState.WALL)
         {
@@ -68,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
 
             curDashCooldown = 0; 
             curState = MoveState.DEFAULT;
+            curWallHitCooldown = wallHitCooldown;
         }
     }
 
@@ -91,10 +97,10 @@ public class PlayerMovement : MonoBehaviour
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         
-        if (curState == MoveState.DEFAULT)
+        if (curState == MoveState.DEFAULT && curWallHitCooldown <= 0.0f)
         {
             curState = MoveState.WALL;
-            curVelocity = Vector3.zero; 
+            curVelocity = Vector3.zero;
         }
     }
 }
