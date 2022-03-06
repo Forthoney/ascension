@@ -32,4 +32,11 @@ public class SelfMoveTile : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position,
             selfMoving[current].transform.position, Time.deltaTime);
     }
+
+    /*
+     * To move the player, see how much the normal of the collision lines up with the velocity of the box
+     * For instance, if the normal and the velocity are in the same direction, then the player should be going that direction too.
+     * Otherwise, they shouldn't be. 
+     * So if the player hits the behind, the normal of the collision and the velocity will be opposite so they won't move n such. 
+     */
 }

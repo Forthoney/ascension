@@ -6,8 +6,9 @@ using UnityEngine.AI;
 public class EnemyMovement : MonoBehaviour
 { 
     public float viewRange = 40f;
+    public float stopRange = 5f; 
     public float turnRate = 5f;
-    public float moveRate = 5f;
+    public float moveRate = 1f;
     public GameObject player;
 
     float stepMove;
@@ -25,7 +26,11 @@ public class EnemyMovement : MonoBehaviour
     {
         if (CanSeePlayer()) {
             FaceTarget();
-            MoveToTarget();
+
+            if (Vector3.Distance(target.position, transform.position) > stopRange)
+            {
+                MoveToTarget();
+            }
         }
     }
 
