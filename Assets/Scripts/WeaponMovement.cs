@@ -11,6 +11,7 @@ public class WeaponMovement : MonoBehaviour
     [SerializeField] private float magnitude;
     [SerializeField] private float recoilPeriod;
     [SerializeField] private float recoverPeriod;
+    [SerializeField] private Animation recoilAnimation;
     
     void Update()
     {
@@ -26,6 +27,11 @@ public class WeaponMovement : MonoBehaviour
         Quaternion rotationY = Quaternion.AngleAxis(mouseX, Vector3.up);
 
         return Quaternion.Slerp(localRotation, rotationX * rotationY, smoothSway * Time.deltaTime);
+    }
+
+    public void ApplyRecoil()
+    {
+        recoilAnimation.Play();
     }
     // public void ApplyRecoil()
     // {
