@@ -13,13 +13,20 @@ public class LevelTrigger : MonoBehaviour
 {
     
     public Triggerable[] toActivate;
+    public bool oneShot = true; 
+    private int timesUsed = 0; 
     
 
     public void ActivateTrigger()
     {
-        foreach (Triggerable activate in toActivate)
+
+        if (!oneShot || timesUsed <= 0)
         {
-            activate.onTriggered();
+            foreach (Triggerable activate in toActivate)
+            {
+                activate.onTriggered();
+            }
+            timesUsed++; 
         }
     }
 }
