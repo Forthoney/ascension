@@ -13,14 +13,13 @@ public class PlayerInput : MonoBehaviour
     {
         if (Input.GetButtonDown("Dash"))
         {
-            movement.Dash(-cameraParent.forward);
+            movement.Dash(cameraParent.forward);
         }
 
         if (Input.GetButtonDown("Fire1"))
         {
             if (weapon.CanShoot())
             {
-                // Fixes an issue with Screen Shake.
                 weapon.Shoot();
                 movement.Knockback(-cameraParent.forward, 10);
             }
