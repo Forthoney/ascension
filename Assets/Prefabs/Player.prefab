@@ -394,6 +394,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8329992067701128421}
     - target: {fileID: 1467944299959378802, guid: 27165b534aaa64cac87dc9112a7511b9, type: 3}
+      propertyPath: shakeDuration
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1467944299959378802, guid: 27165b534aaa64cac87dc9112a7511b9, type: 3}
+      propertyPath: shakeIntensity
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1467944299959378802, guid: 27165b534aaa64cac87dc9112a7511b9, type: 3}
       propertyPath: weaponMovement
       value: 
       objectReference: {fileID: 5985100977195383228}
