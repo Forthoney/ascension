@@ -10,6 +10,7 @@ public class WeaponMovement : MonoBehaviour
     [Header("Recoil Settings")]
     [SerializeField] private float magnitude;
     [SerializeField] private float recoilPeriod;
+    [SerializeField] private float recoverPeriod;
     
     void Update()
     {
@@ -26,14 +27,28 @@ public class WeaponMovement : MonoBehaviour
 
         return Quaternion.Slerp(localRotation, rotationX * rotationY, smoothSway * Time.deltaTime);
     }
-    public void ApplyRecoil()
-    {
-        Quaternion recoilRotation = Quaternion.AngleAxis(magnitude, Vector3.up);
-        float elapsedTime = 0f;
-        while (elapsedTime < recoilPeriod) 
-        {
-            transform.localRotation = Quaternion.Lerp(transform.localRotation, recoilRotation, recoilPeriod - elapsedTime);
-            elapsedTime += Time.deltaTime;
-        }
-    }
+    // public void ApplyRecoil()
+    // {
+    //     Quaternion recoverRotation = Quaternion.AngleAxis(magnitude, Vector3.down);
+    //
+    //     bool isRecoiling = true;
+    //     
+    //     while (isRecoiling)
+    //     {
+    //         isRecoiling = Recoil(Quaternion.AngleAxis(magnitude, Vector3.up), recoilPeriod);
+    //     }
+    //     Recoil(Quaternion.AngleAxis(magnitude, Vector3.down), recoverPeriod);
+    // }
+    //
+    // private bool Recoil(Quaternion rotation, float period)
+    // {
+    //     float elapsedTime = 0f;
+    //     while (elapsedTime < recoilPeriod) 
+    //     {
+    //         transform.localRotation = Quaternion.Lerp(transform.localRotation, rotation, period - elapsedTime);
+    //         elapsedTime += Time.deltaTime;
+    //     }
+    //
+    //     return false;
+    // }
 }
