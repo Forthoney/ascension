@@ -260,6 +260,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   INITIAL_HEALTH: 100
+  deathEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2651841421217810367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,7 +406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smoothSway: 2
-  swayMultiplier: 8
+  swayMultiplier: 10
   recoilAnimation: {fileID: 0}
 --- !u!1001 &1920963990472597069
 PrefabInstance:
