@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageWall : MonoBehaviour
+public class DamageWall : WallBehavior
 {
 
     [SerializeField] private int wallDamage;
@@ -18,11 +18,10 @@ public class DamageWall : MonoBehaviour
     {
         
     }
-
-    private void OnCollisionEnter(Collision other) {
-        if (other.gameObject.tag == "Player") {
-            MortalInfo playerInfo = other.gameObject.GetComponent<MortalInfo>();
-            playerInfo.TakeDamage(wallDamage);
-        } 
+    
+    public override void StartWallCollisionBehavior(GameObject player) {
+        MortalInfo playerInfo = player.GetComponent<MortalInfo>();
+        playerInfo.TakeDamage(wallDamage);
     }
+
 }

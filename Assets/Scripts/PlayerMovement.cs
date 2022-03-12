@@ -88,6 +88,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
+
+        if (hit.gameObject.tag == "Wall") {
+            WallBehavior wallBehavior = hit.gameObject.GetComponent<WallBehavior>();
+            wallBehavior.StartWallCollisionBehavior(this.gameObject);
+        }   
+
         if (curState == MoveState.DEFAULT && curWallHitCooldown <= 0f)
         {
             curState = MoveState.WALL;
