@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MortalInfo : MonoBehaviour
 {
-    public int INITIAL_HEALTH = 100;
-    int health;
+    [SerializeField] private int INITIAL_HEALTH = 100;
+    private int health;
+    private UnityEvent deathEvent;
     // Start is called before the first frame update
     
     void Start() {
@@ -20,12 +22,7 @@ public class MortalInfo : MonoBehaviour
     }
 
     void Death() {
-        PlayDeathAnimation();
+        deathEvent.Invoke();
         Destroy(gameObject);    
     }
-
-    //method to be used when a Death Animation is created
-    void PlayDeathAnimation() {
-
-    } 
 }
