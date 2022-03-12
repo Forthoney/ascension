@@ -81,6 +81,10 @@ public class PlayerMovement : MonoBehaviour
         curVelocity = velocity; 
     }
 
+    public Vector3 GetVelocity() {
+        return curVelocity;
+    }
+
     public void Knockback(Vector3 direction, float knockbackAmount)
     {
         curVelocity += direction * knockbackAmount;
@@ -91,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (hit.gameObject.tag == "Wall") {
             WallBehavior wallBehavior = hit.gameObject.GetComponent<WallBehavior>();
-            wallBehavior.StartWallCollisionBehavior(this.gameObject);
+            wallBehavior.StartWallCollisionBehavior(this.gameObject, hit.normal);
         }   
 
         if (curState == MoveState.DEFAULT && curWallHitCooldown <= 0f)

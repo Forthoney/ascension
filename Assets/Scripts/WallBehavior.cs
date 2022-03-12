@@ -4,6 +4,6 @@ using UnityEngine;
 
 public abstract class WallBehavior : MonoBehaviour
 {
-    public abstract void StartWallCollisionBehavior(GameObject player);
+    public abstract void StartWallCollisionBehavior(GameObject player, Vector3 normal);
 
 }
