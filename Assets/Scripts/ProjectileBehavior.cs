@@ -31,7 +31,7 @@ public class ProjectileBehavior : MonoBehaviour
         bool hasHit = Physics.Raycast(transform.position, transform.forward, out hit, projectileSpeed);
         if (hasHit)
         {
-            Debug.Log(hit.transform.name);
+            //Debug.Log(hit.transform.name);
             // If the projectile hits a player, call its TakeDamage method.
             if (hit.transform.name == "Player")
             {

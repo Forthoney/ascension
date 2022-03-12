@@ -38,6 +38,7 @@ public class CombatRoomLogic : Triggerable
                 if (curEnemySpawnTime <= 0.0f)
                 {
                     SpawnEnemy();
+                    Debug.Log("Enemy spawned from timer");
                 }
             }
         }
@@ -50,7 +51,7 @@ public class CombatRoomLogic : Triggerable
         if (curEnemies < waves[curWave].minEnemies)
         {
             SpawnEnemy();
-            
+            Debug.Log("Enemy spawned from minimum");
         }
     }
 
@@ -63,14 +64,16 @@ public class CombatRoomLogic : Triggerable
             try
             {
                SpawnEnemy();
+               Debug.Log("Enemy spawned from start");
             }
             catch (System.IndexOutOfRangeException e)
             {
-                print("out of bounds error in combat room! check wave number or start enemies.");
+                Debug.Log("out of bounds error in combat room! check wave number or start enemies.");
             }
         }
         
     }
+
 
     public void OnWaveEnd()
     {
@@ -86,34 +89,54 @@ public class CombatRoomLogic : Triggerable
         }
     }
 
+    public void CheckWaveEnd()
+    {
+        CombatWave wave = waves[curWave];
+
+        if (curWaveEnemy >= wave.enemies.Length && curEnemies <= 0)
+        {
+            OnWaveEnd();
+        }
+    }
+
 
     public void SpawnEnemy()
     {
         CombatWave wave = waves[curWave];
-        // Get the current enemy from the current wave
-        EnemySpawn spawn = wave.enemies[curWaveEnemy];
 
-        GameObject ob = Instantiate(spawn.toSpawn, spawn.spawnLocation);
-        ob.transform.parent = null;
-
-        MortalInfo info;
-        ob.TryGetComponent<MortalInfo>(out info);
-
-        if (info != null)
+        if (curWaveEnemy < wave.enemies.Length)
         {
-            // TODO, hook up on death event with on enemy death
+            // Get the current enemy from the current wave
+            EnemySpawn spawn = wave.enemies[curWaveEnemy];
+
+            GameObject ob = Instantiate(spawn.toSpawn, spawn.spawnLocation);
+            ob.transform.parent = null;
+
+            MortalInfo info;
+            ob.GetComponent<MortalInfo>().deathEvent.AddListener(OnEnemyDeath);
+            //ob.TryGetComponent<MortalInfo>(out info);
+
+            /*if (info != null)
+            {
+                info.deathEvent.AddListener(OnEnemyDeath);
+                // TODO, hook up on death event with on enemy death
+            }*/
+
+            // Reset Timer
+            curEnemySpawnTime = wave.enemySpawnTime + Random.Range(-wave.enemySpawnTimeOffset, wave.enemySpawnTimeOffset);
+
+            curWaveEnemy++;
+            curEnemies++;
         }
-
-        // Reset Timer
-        curEnemySpawnTime = wave.enemySpawnTime + Random.Range(-wave.enemySpawnTimeOffset, wave.enemySpawnTimeOffset);
-
-        curWaveEnemy++; 
-        curEnemies++; 
     }
 
 
     public void OnEnemyDeath()
     {
-        curEnemies--; 
+        curEnemies--;
+
+        
+        CheckWaveEnd();
+        CheckWave();
     }
 }
