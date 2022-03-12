@@ -20,8 +20,10 @@ public class PlayerInput : MonoBehaviour
         {
             if (weapon.CanShoot())
             {
+                // Fixes an issue with Screen Shake.
+                Vector3 currentLookDirection = look.GetLookDirection();
                 weapon.Shoot();
-                movement.Knockback(look.GetLookDirection(), 10);
+                movement.Knockback(currentLookDirection, 10);
             }
         }
     }
