@@ -6,12 +6,13 @@ using UnityEngine;
 // https://www.youtube.com/watch?v=_QajrabyTJc
 public class MouseLook : MonoBehaviour
 {
-
-    public float mouseSensitivity = 100f;
-
-    public Transform playerBody;
-
-    float xRotation = 0f;
+    [SerializeField] private Transform cameraParent;
+    [SerializeField] private Transform playerHead;
+    
+    [SerializeField] private float mouseSensitivity = 100f;
+    
+    private float xRotation;
+    private float yRotation;
 
 
     // Start is called before the first frame update
@@ -27,16 +28,16 @@ public class MouseLook : MonoBehaviour
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
         xRotation -= mouseY;
+        yRotation += mouseX;
+        
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f); 
-
-        playerBody.Rotate(Vector3.up * mouseX);
+        cameraParent.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
+        playerHead.rotation = Quaternion.Euler(xRotation, yRotation, 0f);
     }
 
     public Vector3 GetLookDirection()
     {
-        
-        return -(Camera.main.transform.forward).normalized;
+        return -(cameraParent.transform.forward).normalized;
     }
 }

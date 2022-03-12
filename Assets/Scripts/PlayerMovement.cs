@@ -22,8 +22,6 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody body;
     public CharacterController controller;
-
-
     
     private float curDashCooldown = 0;
 
@@ -83,21 +81,14 @@ public class PlayerMovement : MonoBehaviour
         curVelocity = velocity; 
     }
 
-    public void AddVelocity(Vector3 velocityAdd)
-    {
-        curVelocity += velocityAdd;
-    }
-
-
     public void Knockback(Vector3 direction, float knockbackAmount)
     {
-        AddVelocity(direction * knockbackAmount);
+        curVelocity += direction * knockbackAmount;
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        
-        if (curState == MoveState.DEFAULT && curWallHitCooldown <= 0.0f)
+        if (curState == MoveState.DEFAULT && curWallHitCooldown <= 0f)
         {
             curState = MoveState.WALL;
             curVelocity = Vector3.zero;

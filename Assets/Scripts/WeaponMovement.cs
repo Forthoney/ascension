@@ -8,17 +8,14 @@ public class WeaponMovement : MonoBehaviour
     [SerializeField] private float smoothSway;
     [SerializeField] private float swayMultiplier;
     [Header("Recoil Settings")]
-    [SerializeField] private float magnitude;
-    [SerializeField] private float recoilPeriod;
-    [SerializeField] private float recoverPeriod;
     [SerializeField] private Animation recoilAnimation;
     
     void Update()
     {
-        transform.localRotation = SwayMovement(transform.localRotation);
+        transform.localRotation = SwayMovement();
     }
 
-    private Quaternion SwayMovement(Quaternion localRotation)
+    private Quaternion SwayMovement()
     {
         float mouseX = Input.GetAxisRaw("Mouse X") * swayMultiplier;
         float mouseY = Input.GetAxisRaw("Mouse Y") * swayMultiplier;
@@ -26,7 +23,7 @@ public class WeaponMovement : MonoBehaviour
         Quaternion rotationX = Quaternion.AngleAxis(-mouseY, Vector3.right);
         Quaternion rotationY = Quaternion.AngleAxis(mouseX, Vector3.up);
 
-        return Quaternion.Slerp(localRotation, rotationX * rotationY, smoothSway * Time.deltaTime);
+        return Quaternion.Slerp(transform.localRotation, rotationX * rotationY, smoothSway * Time.deltaTime);
     }
 
     public void ApplyRecoil()

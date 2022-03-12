@@ -5,15 +5,15 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
 
-    public PlayerMovement movement;
-    public MouseLook look;
-    public WeaponBehavior weapon; 
+    [SerializeField] private PlayerMovement movement;
+    [SerializeField] private Transform cameraParent;
+    [SerializeField] private WeaponBehavior weapon; 
 
     private void Update()
     {
         if (Input.GetButtonDown("Dash"))
         {
-            movement.Dash(-look.GetLookDirection());
+            movement.Dash(-cameraParent.forward);
         }
 
         if (Input.GetButtonDown("Fire1"))
@@ -21,9 +21,8 @@ public class PlayerInput : MonoBehaviour
             if (weapon.CanShoot())
             {
                 // Fixes an issue with Screen Shake.
-                Vector3 currentLookDirection = look.GetLookDirection();
                 weapon.Shoot();
-                movement.Knockback(currentLookDirection, 10);
+                movement.Knockback(-cameraParent.forward, 10);
             }
         }
     }
