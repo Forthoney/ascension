@@ -15,6 +15,8 @@ public class HSWeaponBehavior : WeaponBehavior
     [SerializeField] private float shakeDuration = 0.1f;
     [SerializeField] private float shakeIntensity = 0.1f;
 
+    public float knockback = 7.0f; 
+
     public override void Shoot()
     {
         //weaponMovement.ApplyRecoil();
@@ -49,6 +51,6 @@ public class HSWeaponBehavior : WeaponBehavior
 
     public override float GetKnockback()
     {
-        return 10f;
+        return knockback;
     }
 }

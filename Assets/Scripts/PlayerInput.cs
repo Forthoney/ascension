@@ -21,7 +21,7 @@ public class PlayerInput : MonoBehaviour
             if (weapon.CanShoot())
             {
                 weapon.Shoot();
-                movement.Knockback(-cameraParent.forward, 10);
+                movement.Knockback(-cameraParent.forward, weapon.GetKnockback());
             }
         }
     }
