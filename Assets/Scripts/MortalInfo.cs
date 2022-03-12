@@ -7,7 +7,7 @@ public class MortalInfo : MonoBehaviour
 {
     [SerializeField] private int INITIAL_HEALTH = 100;
     private int health;
-    private UnityEvent deathEvent;
+    public UnityEvent deathEvent;
     // Start is called before the first frame update
     
     void Start() {
@@ -16,6 +16,7 @@ public class MortalInfo : MonoBehaviour
 
     public void TakeDamage(int amount) {
         health -= amount;
+        Debug.Log("current player health: " + health);
         if (health <= 0) {
             Death();
         }

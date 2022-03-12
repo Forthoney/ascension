@@ -19,6 +19,7 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         stepMove = moveRate * Time.deltaTime;
+        player = GameObject.FindGameObjectWithTag("Player");
         target = player.transform;
     }
 
