@@ -16,7 +16,7 @@ public class MortalInfo : MonoBehaviour
 
     public void TakeDamage(int amount) {
         health -= amount;
-        Debug.Log("current player health: " + health);
+        //Debug.Log("current player health: " + health);
         if (health <= 0) {
             Death();
         }

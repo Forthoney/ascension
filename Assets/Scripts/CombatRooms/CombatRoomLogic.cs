@@ -28,7 +28,7 @@ public class CombatRoomLogic : Triggerable
 
     public void Update()
     {
-        if (curEnemySpawnTime > 0.0f)
+        if (curEnemySpawnTime > 0.0f && curWave < waves.Length)
         {
             curEnemySpawnTime -= Time.deltaTime;
 
@@ -48,7 +48,7 @@ public class CombatRoomLogic : Triggerable
     public void CheckWave()
     {
         // Spawn an enemy if there are less than the minimum amount
-        if (curEnemies < waves[curWave].minEnemies)
+        if (curWave < waves.Length && curEnemies < waves[curWave].minEnemies)
         {
             SpawnEnemy();
             Debug.Log("Enemy spawned from minimum");
@@ -91,11 +91,22 @@ public class CombatRoomLogic : Triggerable
 
     public void CheckWaveEnd()
     {
-        CombatWave wave = waves[curWave];
-
-        if (curWaveEnemy >= wave.enemies.Length && curEnemies <= 0)
+        try
         {
-            OnWaveEnd();
+
+            if (curWave < waves.Length)
+            {
+                CombatWave wave = waves[curWave];
+
+                if (curWaveEnemy >= wave.enemies.Length && curEnemies <= 0)
+                {
+                    OnWaveEnd();
+                }
+            }
+        }
+        catch
+        {
+            Debug.Log("Check wave end error");
         }
     }
 
