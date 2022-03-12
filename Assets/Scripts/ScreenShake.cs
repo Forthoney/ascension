@@ -23,7 +23,7 @@ public class ScreenShake : MonoBehaviour
         while(elapsed < duration)
         {
             float x = Random.Range(-1f, 1f) * magnitude;
-            float y = Random.Range(-1, 1f) * magnitude;
+            float y = Random.Range(-1f, 1f) * magnitude;
 
             transform.localPosition = new Vector3(x, y, originalPos.z);
 

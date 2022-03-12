@@ -11,10 +11,15 @@ public class HSWeaponBehavior : WeaponBehavior
     [SerializeField] private Camera playerView;
     [SerializeField] private WeaponMovement weaponMovement;
 
+    [SerializeField] private ScreenShake shaker;
+    [SerializeField] private float shakeDuration = 0.1f;
+    [SerializeField] private float shakeIntensity = 0.1f;
+
     public override void Shoot()
     {
-        weaponMovement.ApplyRecoil();
+        //weaponMovement.ApplyRecoil();
         ShootRay(playerView.transform);
+        shaker.StartScreenShake(shakeDuration, shakeIntensity);
         ResetCooldown();
     }
 
@@ -40,6 +45,7 @@ public class HSWeaponBehavior : WeaponBehavior
             hitStats.TakeDamage(this.damage);
         }
     }
+
 
     public override float GetKnockback()
     {
