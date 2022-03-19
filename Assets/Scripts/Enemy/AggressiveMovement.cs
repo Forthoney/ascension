@@ -1,10 +1,6 @@
 namespace Enemy
 {
-using System.Collections;
-using System.Collections.Generic;
-using System.Configuration;
-using UnityEngine;
-using UnityEngine.AI;
+    using UnityEngine;
 
     public class AggressiveMovement : Movement
     {

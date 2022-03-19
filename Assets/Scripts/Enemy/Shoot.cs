@@ -11,17 +11,17 @@ namespace Enemy
         // Update is called once per frame
         void Update()
         {
-            if (this.IsAiming() && weapon.CanShoot()) {
+            if (IsAiming() && weapon.CanShoot()) {
                 ShootWeapon();
             }
         }
 
-        void ShootWeapon() {
+        private void ShootWeapon() {
             weapon.Shoot();
-            this.Knockback(weapon.GetKnockback());
+            Knockback(weapon.GetKnockback());
         }
 
-        void Knockback(float recoil) {
+        private void Knockback(float recoil) {
             float duration = 2f;
 
             while (duration > 0) {
@@ -30,8 +30,8 @@ namespace Enemy
             }
         }
 
-        bool IsAiming() {
-            return Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hitinfo, shootRange);
+        private bool IsAiming() {
+            return Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out var hit, shootRange);
         }
     }
 }
