@@ -301,7 +301,7 @@ MonoBehaviour:
   movement: {fileID: 8329992066975207512}
   cameraParent: {fileID: 23233818480643408}
   weapon: {fileID: 1078485677173964095}
-  mouse: {fileID: 0}
+  mouse: {fileID: 2651841421217810367}
 --- !u!114 &8329992066975207512
 MonoBehaviour:
   m_ObjectHideFlags: 0
