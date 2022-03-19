@@ -48,12 +48,10 @@ public class HSWeaponBehavior : WeaponBehavior
             if (hit.transform.tag == "Enemy") Debug.Log(Random.Range(1, 10000) + " shot an enemy");
         }
 
-        //Debug.Log(deviatedRay.ToString());
-        Debug.Log(fpsCamera.forward);
-        Debug.DrawRay(fpsCamera.position, 200 * deviatedRay, Color.red, 0.5f);
     }
 
-    private Vector3 GetDeviatedRay(Vector3 forwardVector) {
+    private Vector3 GetDeviatedRay(Vector3 forwardVector)
+    {
         Vector3 deviatedRay = forwardVector;
 
         // Generates a value for the angle deviation from the normal forward vector (will determine r in polar coordinates).
@@ -75,7 +73,7 @@ public class HSWeaponBehavior : WeaponBehavior
     private void ApplyDamage(RaycastHit hit)
     {
         Debug.Log(hit.transform.tag);
-        if (hit.transform.CompareTag("Enemy")) 
+        if (hit.transform.CompareTag("Enemy"))
         {
             MortalInfo hitStats = hit.transform.GetComponent<MortalInfo>();
             hitStats.TakeDamage(this.damage);
