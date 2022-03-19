@@ -11,13 +11,15 @@ public class ChargeRow
 {
     public int damage;
     public float time;
-    public float knockback; 
+    public float knockback;
+    public Color color; 
 
-    public ChargeRow(float time, int dmg, float knock)
+    public ChargeRow(float time, int dmg, float knock, Color col)
     {
         this.time = time;
         this.damage = dmg; 
-        this.knockback = knock; 
+        this.knockback = knock;
+        this.color = col; 
     }
 
 
@@ -35,6 +37,11 @@ public class ChargeRow
     {
         return knockback; 
     }
+
+    public Color GetColor()
+    {
+        return color; 
+    }
 }
 
 public abstract class WeaponBehavior : MonoBehaviour
@@ -44,15 +51,16 @@ public abstract class WeaponBehavior : MonoBehaviour
     protected float currentCooldown;
 
 
-    public float knockback = 7.0f;
-    [SerializeField] protected int damage = 10;
+    [HideInInspector] public float knockback = 7.0f;
+    [HideInInspector] protected int damage = 10;
+    [HideInInspector] protected Color curChargeColor = Color.white; 
 
 
     // Charge stuff
     [SerializeField] private float maxChargeTime = 1.5f;
     // Array with seconds in, damage, and knockback level
 
-    [SerializeField] private ChargeRow[] chargeLevels =  { new ChargeRow(0.25f, 50, 4), new ChargeRow(0.75f, 100, 12), new ChargeRow(1.25f, 200, 24) };
+    [SerializeField] private ChargeRow[] chargeLevels =  { new ChargeRow(0.25f, 50, 4, Color.green), new ChargeRow(0.75f, 100, 12, Color.yellow), new ChargeRow(1.25f, 200, 24, Color.red) };
     private float curChargeTime = 0;
 
 
@@ -105,11 +113,15 @@ public abstract class WeaponBehavior : MonoBehaviour
         if (charging && curChargeTime < maxChargeTime)
         {
             curChargeTime = Mathf.Clamp(curChargeTime + Time.deltaTime, 0, maxChargeTime);
+
+
+            curChargeColor = chargeLevels[GetChargeLevel()].GetColor();
         }
     }
 
     public void SetChargeValues()
     {
+        // If chargeable, set values to the current respective charge level
         if (chargeable)
         {
             int chargeLevel = GetChargeLevel();
@@ -118,11 +130,18 @@ public abstract class WeaponBehavior : MonoBehaviour
 
             damage = (int)chargeLevels[chargeLevel].GetDamage();
             knockback = chargeLevels[chargeLevel].GetKnockback();
+            curChargeColor = chargeLevels[chargeLevel].GetColor();
 
             Debug.Log("CHARGE LEVEL " + chargeLevel.ToString() + " dmg " + damage.ToString() + " knockback " + knockback.ToString());
 
             curChargeTime = 0;
             charging = false;
+        }
+        // If not chargeable, just get the charge value from the first one
+        else
+        {
+            damage = (int)chargeLevels[0].GetDamage();
+            knockback = chargeLevels[0].GetKnockback();
         }
     }
 
@@ -136,7 +155,7 @@ public abstract class WeaponBehavior : MonoBehaviour
             }
         }
 
-        return 0; 
+        return chargeLevels.Length - 1; 
     }
 
 
@@ -148,6 +167,11 @@ public abstract class WeaponBehavior : MonoBehaviour
     public float GetMaxCharge()
     {
         return maxChargeTime;
+    }
+
+    public Color GetCurrentChargeColor()
+    {
+        return curChargeColor;
     }
 
     public bool CanShoot()
