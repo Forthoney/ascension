@@ -18,7 +18,20 @@ public class PlayerInput : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            if (weapon.CanShoot())
+            if (!weapon.chargeable && weapon.CanShoot())
+            {
+                weapon.Shoot();
+                movement.Knockback(-cameraParent.forward, weapon.GetKnockback());
+            }
+            else if (weapon.chargeable)
+            {
+                weapon.StartCharge();
+            }
+
+        }
+        else if (Input.GetButtonUp("Fire1"))
+        {
+            if (weapon.chargeable)
             {
                 weapon.Shoot();
                 movement.Knockback(-cameraParent.forward, weapon.GetKnockback());

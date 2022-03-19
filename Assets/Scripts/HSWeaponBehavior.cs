@@ -6,7 +6,7 @@ using UnityEngine;
 // Watch video: https://www.youtube.com/watch?v=THnivyG0Mvo
 public class HSWeaponBehavior : WeaponBehavior
 {
-    [SerializeField] private int damage = 10;
+    
     [SerializeField] private float range = 100f;
     [SerializeField] private Camera playerView;
     [SerializeField] private WeaponMovement weaponMovement;
@@ -15,10 +15,14 @@ public class HSWeaponBehavior : WeaponBehavior
     [SerializeField] private float shakeDuration = 0.1f;
     [SerializeField] private float shakeIntensity = 0.1f;
 
-    public float knockback = 7.0f; 
+    
+
 
     public override void Shoot()
     {
+
+        SetChargeValues();
+
         //weaponMovement.ApplyRecoil();
         ShootRay(playerView.transform);
         shaker.StartScreenShake(shakeDuration, shakeIntensity);

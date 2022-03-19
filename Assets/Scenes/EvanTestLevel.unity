@@ -15053,6 +15053,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1078485677173964095, guid: 28ddc3204ae18a248949220c64d2763f, type: 3}
+      propertyPath: knockback
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078485677173964095, guid: 28ddc3204ae18a248949220c64d2763f, type: 3}
+      propertyPath: chargeable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2651841421217810367, guid: 28ddc3204ae18a248949220c64d2763f, type: 3}
       propertyPath: mouseSensitivity
       value: 400
