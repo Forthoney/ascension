@@ -100,17 +100,22 @@ public class PlayerMovement : MonoBehaviour
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
 
-        if (hit.gameObject.tag == "Wall") {
-            WallBehavior wallBehavior = hit.gameObject.GetComponent<WallBehavior>();
-            wallBehavior.StartWallCollisionBehavior(this.gameObject, hit.normal);
-        }
+        bool specialWall = false;
 
-        if (Vector3.Angle(hit.normal, -curVelocity.normalized) <= 90 && curWallHitCooldown <= 0f)
-        {
-            curVelocity = Vector3.zero;
-            curState = MoveState.WALL;
+        if (hit.gameObject.tag == "SpecialWall") {
+            SpecialWallBehavior wallBehavior = hit.gameObject.GetComponent<SpecialWallBehavior>();
+            specialWall = wallBehavior.StartWallCollisionBehavior(this.gameObject, hit.normal);
         }
         
+        if (Vector3.Angle(hit.normal, -curVelocity.normalized) <= 90 && curWallHitCooldown <= 0f && !specialWall)
+        {
+            curVelocity = Vector3.zero;
+            curState = MoveState.WALL;      
+            Debug.Log(curVelocity.ToString());
+        }
+        
+        
+
         
 
         
