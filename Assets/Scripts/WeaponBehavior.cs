@@ -50,6 +50,8 @@ public abstract class WeaponBehavior : MonoBehaviour
     public float defaultCooldown = 0.25f; 
     protected float currentCooldown;
 
+    public Animation anim;
+
 
     [HideInInspector] public float knockback = 7.0f;
     [HideInInspector] protected int damage = 10;
@@ -89,6 +91,12 @@ public abstract class WeaponBehavior : MonoBehaviour
         {
             currentCooldown = currentCooldown - Time.deltaTime;
         }
+    }
+
+    public void PlayAnimation()
+    {
+        anim.Rewind();
+        anim.Play();
     }
 
     protected void ResetCooldown()
