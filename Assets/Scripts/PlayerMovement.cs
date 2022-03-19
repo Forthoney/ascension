@@ -31,41 +31,35 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (curState == MoveState.DEFAULT)
-        {
-            controller.Move(curVelocity * Time.fixedDeltaTime);
 
-            if (curDashCooldown >= 0)
-            {
-                curDashCooldown -= Time.fixedDeltaTime;
-            }
 
-            curWallHitCooldown -= Time.fixedDeltaTime; 
-        }
-        else if (curState == MoveState.WALL)
+        controller.Move(curVelocity * Time.fixedDeltaTime);
+
+        if (curDashCooldown >= 0)
         {
-            // Nothing rn :)
+            curDashCooldown -= Time.fixedDeltaTime;
         }
+
+        curWallHitCooldown -= Time.fixedDeltaTime; 
+        
     }
 
 
     public void Dash(Vector3 direction)
     {
         ///body.AddForce(Camera.main.transform.forward * dashSpeed);
-        
-        if (curState == MoveState.DEFAULT)
+
+        if (curDashCooldown <= 0 && curState == MoveState.DEFAULT)
         {
-            if (curDashCooldown <= 0)
-            {
-                curVelocity = direction * dashSpeed;
-                curDashCooldown = dashCooldown;
-            }
-            else
-            {
-                print("on cooldown !");
-            }
+            curVelocity = direction * dashSpeed;
+            curDashCooldown = dashCooldown;
         }
-        else if (curState == MoveState.WALL)
+        else
+        {
+            print("on cooldown !");
+        }
+        
+        if (curState == MoveState.WALL)
         {
             curVelocity = direction * wallDashSpeed;
 
@@ -78,7 +72,13 @@ public class PlayerMovement : MonoBehaviour
 
     public void SetVelocity(Vector3 velocity)
     {
-        curVelocity = velocity; 
+        curVelocity = velocity;
+
+        if (curState == MoveState.WALL)
+        {
+            curWallHitCooldown = wallHitCooldown;
+            curState = MoveState.DEFAULT;
+        }
     }
 
     public Vector3 GetVelocity() {
@@ -88,6 +88,13 @@ public class PlayerMovement : MonoBehaviour
     public void Knockback(Vector3 direction, float knockbackAmount)
     {
         curVelocity += direction * knockbackAmount;
+
+        if (curState == MoveState.WALL)
+        {
+            curWallHitCooldown = wallHitCooldown;
+            curState = MoveState.DEFAULT;
+        }
+                
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
@@ -96,12 +103,22 @@ public class PlayerMovement : MonoBehaviour
         if (hit.gameObject.tag == "Wall") {
             WallBehavior wallBehavior = hit.gameObject.GetComponent<WallBehavior>();
             wallBehavior.StartWallCollisionBehavior(this.gameObject, hit.normal);
-        }   
-
-        if (curState == MoveState.DEFAULT && curWallHitCooldown <= 0f)
-        {
-            curState = MoveState.WALL;
-            curVelocity = Vector3.zero;
         }
+
+        if (Vector3.Angle(hit.normal, -curVelocity.normalized) <= 90 && curWallHitCooldown <= 0f)
+        {
+            curVelocity = Vector3.zero;
+            curState = MoveState.WALL;
+        }
+        
+        
+
+        
+
+        //if (curState == MoveState.DEFAULT && curWallHitCooldown <= 0f)
+        //{
+           // curState = MoveState.WALL;
+          //  curVelocity = Vector3.zero;
+       // }
     }
 }
