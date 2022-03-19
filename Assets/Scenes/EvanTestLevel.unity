@@ -15092,8 +15092,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1078485677173964095, guid: 28ddc3204ae18a248949220c64d2763f, type: 3}
-      propertyPath: chargeLevels.Array.data[0].knockback
-      value: 6
+      propertyPath: chargeLevels.Array.data[0].time
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078485677173964095, guid: 28ddc3204ae18a248949220c64d2763f, type: 3}
+      propertyPath: chargeLevels.Array.data[1].time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078485677173964095, guid: 28ddc3204ae18a248949220c64d2763f, type: 3}
+      propertyPath: chargeLevels.Array.data[2].time
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2651841421217810367, guid: 28ddc3204ae18a248949220c64d2763f, type: 3}
       propertyPath: mouseSensitivity
