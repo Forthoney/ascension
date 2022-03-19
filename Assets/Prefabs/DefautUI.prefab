@@ -190,7 +190,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 0}
-  chargeCircle: {fileID: 0}
+  chargeCircle: {fileID: 899117535}
+  minCharge: 0.2
 --- !u!1 &7265762050927063169
 GameObject:
   m_ObjectHideFlags: 0
