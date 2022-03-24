@@ -30,6 +30,8 @@ public class HSWeaponBehavior : WeaponBehavior
         ShootRay(playerView.transform);
         shaker.StartScreenShake(shakeDuration, shakeIntensity);
         ResetCooldown();
+
+        PlayAnimation();
     }
 
     private void ShootRay(Transform fpsCamera)

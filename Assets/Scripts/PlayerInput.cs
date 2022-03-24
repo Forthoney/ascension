@@ -7,7 +7,8 @@ public class PlayerInput : MonoBehaviour
 
     [SerializeField] private PlayerMovement movement;
     [SerializeField] private Transform cameraParent;
-    [SerializeField] private WeaponBehavior weapon; 
+    [SerializeField] private WeaponBehavior weapon;
+    [SerializeField] private MouseLook mouse; 
 
     private void Update()
     {
@@ -37,5 +38,13 @@ public class PlayerInput : MonoBehaviour
                 movement.Knockback(-cameraParent.forward, weapon.GetKnockback());
             }
         }
+
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            // Rotate 180 
+            mouse.StartRotate(1, .3f);
+        }
+
     }
 }
