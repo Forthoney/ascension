@@ -38,11 +38,7 @@ public class ProjectileBehavior : MonoBehaviour
                 MortalInfo hitStats = hit.transform.GetComponent<MortalInfo>();
                 hitStats.TakeDamage(this.damage);
             }
-            else
-            {
-                // If the projectile hits something else than a player, then destroy the game object.
-                Object.Destroy(this.gameObject);
-            }
+            Destroy(this.gameObject);
         }
     }
 }
