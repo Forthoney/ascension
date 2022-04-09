@@ -47,7 +47,7 @@ public class ChargeRow
 public abstract class WeaponBehavior : MonoBehaviour
 {
 
-    public float defaultCooldown = 3f; 
+    public float defaultCooldown = 0.25f; 
     protected float currentCooldown;
 
     public Animation anim;
@@ -83,7 +83,6 @@ public abstract class WeaponBehavior : MonoBehaviour
     {
         UpdateCharge();
         UpdateCooldown();
-        Debug.Log(currentCooldown);
     }
 
     void UpdateCooldown()

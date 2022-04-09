@@ -101,7 +101,7 @@ public class MouseLook : MonoBehaviour
         //xRotationMove = Quaternion.AngleAxis(cameraParent.localRotation.eulerAngles.x, cameraParent.up);
 
 
-        endRotate = cameraParent.localRotation * Quaternion.Euler(0, 0, 0);
+        endRotate = cameraParent.localRotation * Quaternion.Euler(0, 180, 0);
         startRotate = cameraParent.localRotation;
 
         /*gotoXRotation = ((xRotation + 180) % 360) - 180;
