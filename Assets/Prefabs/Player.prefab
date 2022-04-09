@@ -513,7 +513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraParent: {fileID: 23233818480643408}
   playerHead: {fileID: 3106716349305845}
-  mouseSensitivity: 100
+  mouseSensitivity: 400
 --- !u!1 &8604314472856821798
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,6 +580,10 @@ PrefabInstance:
       propertyPath: shaker
       value: 
       objectReference: {fileID: 6718856521622063720}
+    - target: {fileID: 1467944299959378802, guid: 27165b534aaa64cac87dc9112a7511b9, type: 3}
+      propertyPath: chargeable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1467944299959378802, guid: 27165b534aaa64cac87dc9112a7511b9, type: 3}
       propertyPath: playerView
       value: 
