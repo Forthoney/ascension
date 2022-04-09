@@ -8,7 +8,7 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private PlayerMovement movement;
     [SerializeField] private Transform cameraParent;
     [SerializeField] private WeaponBehavior weapon;
-    [SerializeField] private MouseLook mouse; 
+    [SerializeField] private MouseLook mouse;
 
     private void Update()
     {
@@ -19,20 +19,23 @@ public class PlayerInput : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            if (!weapon.chargeable && weapon.CanShoot())
+            if (weapon.CanShoot())
             {
-                weapon.Shoot();
-                movement.Knockback(-cameraParent.forward, weapon.GetKnockback());
-            }
-            else if (weapon.chargeable)
-            {
-                weapon.StartCharge();
+                if (!weapon.chargeable)
+                {
+                    weapon.Shoot();
+                    movement.Knockback(-cameraParent.forward, weapon.GetKnockback());
+                }
+                else
+                {
+                    weapon.StartCharge();
+                }
             }
 
         }
         else if (Input.GetButtonUp("Fire1"))
         {
-            if (weapon.chargeable)
+            if (weapon.chargeable && weapon.CanShoot())
             {
                 weapon.Shoot();
                 movement.Knockback(-cameraParent.forward, weapon.GetKnockback());
