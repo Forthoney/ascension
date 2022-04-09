@@ -28,7 +28,7 @@ public class ProjectileBehavior : MonoBehaviour
     void CheckCollision()
     {
         RaycastHit hit;
-        bool hasHit = Physics.Raycast(transform.position, transform.forward, out hit, projectileSpeed);
+        bool hasHit = Physics.Raycast(transform.position, transform.forward, out hit, projectileSpeed * Time.deltaTime);
         if (hasHit)
         {
             //Debug.Log(hit.transform.name);
@@ -38,11 +38,7 @@ public class ProjectileBehavior : MonoBehaviour
                 MortalInfo hitStats = hit.transform.GetComponent<MortalInfo>();
                 hitStats.TakeDamage(this.damage);
             }
-            else
-            {
-                // If the projectile hits something else than a player, then destroy the game object.
-                Object.Destroy(this.gameObject);
-            }
+            Destroy(this.gameObject);
         }
     }
 }
