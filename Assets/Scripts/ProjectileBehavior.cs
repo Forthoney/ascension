@@ -28,7 +28,7 @@ public class ProjectileBehavior : MonoBehaviour
     void CheckCollision()
     {
         RaycastHit hit;
-        bool hasHit = Physics.Raycast(transform.position, transform.forward, out hit, projectileSpeed);
+        bool hasHit = Physics.Raycast(transform.position, transform.forward, out hit, projectileSpeed * Time.deltaTime);
         if (hasHit)
         {
             //Debug.Log(hit.transform.name);
