@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EvanTestLevel.unity
     guid: 7fb109d50bb450845bc119e3a19d70cd
+  - enabled: 1
+    path: Assets/Scenes/EvanTesting.unity
+    guid: 05495db9fb59bd745894688c40ba03fb
   m_configObjects: {}
