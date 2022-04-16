@@ -10,9 +10,9 @@ namespace Enemy
     
     public abstract class Movement : MonoBehaviour
     { 
-        [SerializeField] private float viewRange = 15; 
+        [SerializeField] private float viewRange = 50; 
         [SerializeField] private float turnRate = 10;
-        [SerializeField] private float moveRate = 10;
+        [SerializeField] private float moveRate = 8;
         
         protected Transform target;
 

@@ -12,9 +12,8 @@ namespace Enemy
         private Vector3 direction;
         private const int WallLayer = 1 << 9;
 
-        protected override void Awake()
+        void OnEnable()
         {
-            base.Awake();
             anchor = transform.position;
             StartCoroutine(SelectDirection());
         }
@@ -27,7 +26,7 @@ namespace Enemy
             GoTo(anchor + direction * radius);
         }
 
-        private IEnumerator SelectDirection()
+        IEnumerator SelectDirection()
         {
             for (;;)
             {
