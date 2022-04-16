@@ -72,13 +72,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1866159622267812286}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cc7458c8acf22041932a90762103603, type: 3}
+  m_Script: {fileID: 11500000, guid: e7cf31d2ed2a8ef49ab7c697e8e3e278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRange: 60
-  turnRate: 5
+  viewRange: 50
+  turnRate: 20
   moveRate: 0
-  player: {fileID: 0}
 --- !u!114 &6535265975388359302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,6 +91,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   INITIAL_HEALTH: 100
+  deathEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8788003665728549895
 GameObject:
   m_ObjectHideFlags: 0
