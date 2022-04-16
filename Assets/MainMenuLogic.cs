@@ -9,4 +9,9 @@ public class MainMenuLogic : MonoBehaviour
     {
         SceneManager.LoadScene(newScene);
     }
+
+    public void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
