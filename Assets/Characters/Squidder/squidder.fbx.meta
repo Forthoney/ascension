@@ -9,7 +9,12 @@ ModelImporter:
   - first:
       74: 1637978020875783869
     second: Armature|Squid Idle
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: f668f7ddc1bba4494ba7af32b526939b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
