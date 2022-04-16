@@ -600,6 +600,30 @@ PrefabInstance:
       propertyPath: weaponMovement
       value: 
       objectReference: {fileID: 5985100977195383228}
+    - target: {fileID: 1467944299959378802, guid: 27165b534aaa64cac87dc9112a7511b9, type: 3}
+      propertyPath: chargeLevels.Array.data[0].time
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1467944299959378802, guid: 27165b534aaa64cac87dc9112a7511b9, type: 3}
+      propertyPath: chargeLevels.Array.data[1].time
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1467944299959378802, guid: 27165b534aaa64cac87dc9112a7511b9, type: 3}
+      propertyPath: chargeLevels.Array.data[2].time
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1467944299959378802, guid: 27165b534aaa64cac87dc9112a7511b9, type: 3}
+      propertyPath: chargeLevels.Array.data[0].knockback
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1467944299959378802, guid: 27165b534aaa64cac87dc9112a7511b9, type: 3}
+      propertyPath: chargeLevels.Array.data[1].knockback
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1467944299959378802, guid: 27165b534aaa64cac87dc9112a7511b9, type: 3}
+      propertyPath: chargeLevels.Array.data[2].knockback
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2267248038082276742, guid: 27165b534aaa64cac87dc9112a7511b9, type: 3}
       propertyPath: m_Name
       value: HSWeapon
