@@ -30,6 +30,7 @@ Transform:
   m_LocalScale: {x: 0.4, y: 0.5, z: 1}
   m_Children:
   - {fileID: 2013275041381088046}
+  - {fileID: 593921665964326927}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -54,15 +55,26 @@ MonoBehaviour:
     time: 0.25
     knockback: 4
     color: {r: 0, g: 1, b: 0, a: 1}
+    cancelVelocity: 0
   - damage: 100
     time: 0.75
     knockback: 12
     color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    cancelVelocity: 0
   - damage: 200
     time: 1.25
     knockback: 24
     color: {r: 1, g: 0, b: 0, a: 1}
+    cancelVelocity: 1
   chargeable: 0
+  cancelCharge: 0
+  onShootParticles: {fileID: 198234346748616026, guid: b994a3d9fa10d87499b7bf680922002f, type: 3}
+  impactParticles: {fileID: 9064919875212695174, guid: 3b3045396270e374ca89cb818d1006a3, type: 3}
+  bulletTrail: {fileID: 328621789431213768, guid: 7632ee67d7e58944eb5cceb7d5bf0fb6, type: 3}
+  muzzle: {fileID: 4000533786735273990}
+  hittable:
+    serializedVersion: 2
+    m_Bits: 1
   range: 100
   playerView: {fileID: 0}
   weaponMovement: {fileID: 0}
@@ -86,6 +98,36 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!1 &4000533786735273990
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 593921665964326927}
+  m_Layer: 10
+  m_Name: Muzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &593921665964326927
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4000533786735273990}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.5253}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2267248038082276746}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6966115867704350828
 GameObject:
   m_ObjectHideFlags: 0

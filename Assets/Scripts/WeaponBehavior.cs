@@ -75,9 +75,17 @@ public abstract class WeaponBehavior : MonoBehaviour
 
     public bool chargeable = false; 
     private bool charging = false;
-    public bool cancelCharge = false; 
+    public bool cancelCharge = false;
 
-    
+
+    // Bullet trail stuff
+    [SerializeField] private ParticleSystem onShootParticles;
+    [SerializeField] private ParticleSystem impactParticles;
+    [SerializeField] private TrailRenderer bulletTrail;
+    [SerializeField] private GameObject muzzle;
+    [SerializeField] private LayerMask hittable; 
+
+
 
 
     // Start is called before the first frame update
@@ -123,6 +131,39 @@ public abstract class WeaponBehavior : MonoBehaviour
             charging = true;
         }
     }
+
+    // https://www.youtube.com/watch?v=cI3E7_f74MA
+    public void OnShootVisuals()
+    {
+        onShootParticles.Play();
+    }
+
+    public void OnHitVisuals(RaycastHit hit)
+    {
+        TrailRenderer trail = Instantiate(bulletTrail, muzzle.transform.position, Quaternion.identity);
+
+        StartCoroutine(SpawnTrail(trail, hit));
+    }
+
+    private IEnumerator SpawnTrail(TrailRenderer Trail, RaycastHit Hit)
+    {
+        float time = 0;
+        Vector3 startPosition = Trail.transform.position;
+
+        while (time < 1)
+        {
+            Trail.transform.position = Vector3.Lerp(startPosition, Hit.point, time);
+            time += Time.deltaTime / Trail.time;
+
+            yield return null;
+        }
+        //Animator.SetBool("IsShooting", false);
+        Trail.transform.position = Hit.point;
+        Instantiate(impactParticles, Hit.point, Quaternion.LookRotation(Hit.normal));
+
+        Destroy(Trail.gameObject, Trail.time);
+    }
+
 
     public void UpdateCharge()
     {

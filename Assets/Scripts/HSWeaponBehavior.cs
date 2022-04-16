@@ -44,9 +44,12 @@ public class HSWeaponBehavior : WeaponBehavior
 
         Vector3 deviatedRay = GetDeviatedRay(fpsCamera.forward);
 
+        OnShootVisuals();
+
         if (Physics.Raycast(fpsCamera.position, deviatedRay, out hit, range, layerMask)) //hit check
         {
             ApplyDamage(hit);
+            OnHitVisuals(hit);
             if (hit.transform.tag == "Enemy") Debug.Log(Random.Range(1, 10000) + " shot an enemy");
         }
 
