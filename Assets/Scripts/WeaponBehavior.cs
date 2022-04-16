@@ -12,14 +12,16 @@ public class ChargeRow
     public int damage;
     public float time;
     public float knockback;
-    public Color color; 
+    public Color color;
+    public bool cancelVelocity;
 
-    public ChargeRow(float time, int dmg, float knock, Color col)
+    public ChargeRow(float time, int dmg, float knock, Color col, bool cancel)
     {
         this.time = time;
         this.damage = dmg; 
         this.knockback = knock;
-        this.color = col; 
+        this.color = col;
+        this.cancelVelocity = cancel;
     }
 
 
@@ -42,6 +44,11 @@ public class ChargeRow
     {
         return color; 
     }
+
+    public bool CancelVelocity()
+    {
+        return cancelVelocity;
+    }
 }
 
 public abstract class WeaponBehavior : MonoBehaviour
@@ -62,12 +69,13 @@ public abstract class WeaponBehavior : MonoBehaviour
     [SerializeField] private float maxChargeTime = 1.5f;
     // Array with seconds in, damage, and knockback level
 
-    [SerializeField] private ChargeRow[] chargeLevels =  { new ChargeRow(0.25f, 50, 4, Color.green), new ChargeRow(0.75f, 100, 12, Color.yellow), new ChargeRow(1.25f, 200, 24, Color.red) };
+    [SerializeField] private ChargeRow[] chargeLevels =  { new ChargeRow(0.25f, 50, 4, Color.green, false), new ChargeRow(0.75f, 100, 12, Color.yellow, false), new ChargeRow(1.25f, 200, 24, Color.red, true) };
     private float curChargeTime = 0;
 
 
     public bool chargeable = false; 
     private bool charging = false;
+    public bool cancelCharge = false; 
 
     
 
@@ -139,17 +147,20 @@ public abstract class WeaponBehavior : MonoBehaviour
             damage = (int)chargeLevels[chargeLevel].GetDamage();
             knockback = chargeLevels[chargeLevel].GetKnockback();
             curChargeColor = chargeLevels[chargeLevel].GetColor();
+            cancelCharge = chargeLevels[chargeLevel].CancelVelocity();
 
             Debug.Log("CHARGE LEVEL " + chargeLevel.ToString() + " dmg " + damage.ToString() + " knockback " + knockback.ToString());
 
             curChargeTime = 0;
             charging = false;
+            
         }
         // If not chargeable, just get the charge value from the first one
         else
         {
             damage = (int)chargeLevels[0].GetDamage();
             knockback = chargeLevels[0].GetKnockback();
+            cancelCharge = chargeLevels[0].CancelVelocity();
         }
     }
 

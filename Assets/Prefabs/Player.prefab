@@ -476,7 +476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curState: 0
-  dashSpeed: 15
+  dashSpeed: 7
   wallDashSpeed: 5
   dashCooldown: 5
   curVelocity: {x: 0, y: 0, z: 0}

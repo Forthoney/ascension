@@ -24,7 +24,14 @@ public class PlayerInput : MonoBehaviour
                 if (!weapon.chargeable)
                 {
                     weapon.Shoot();
-                    movement.Knockback(-cameraParent.forward, weapon.GetKnockback());
+
+                    if (weapon.cancelCharge)
+                    {
+                        movement.SetVelocity(-cameraParent.forward * weapon.GetKnockback());
+                    }
+                    else { 
+                        movement.Knockback(-cameraParent.forward, weapon.GetKnockback());
+                    }
                 }
                 else
                 {
