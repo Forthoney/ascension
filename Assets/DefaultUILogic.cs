@@ -8,7 +8,10 @@ public class DefaultUILogic : MonoBehaviour
 
     public WeaponBehavior weapon;
     public Image chargeCircle;
-    public float minCharge = 0.2f; 
+    public float minCharge = 0.2f;
+
+    public GameObject defaultUI;
+    public GameObject deathUI;
 
     // Update is called once per frame
     void Update()
@@ -24,5 +27,18 @@ public class DefaultUILogic : MonoBehaviour
         {
             chargeCircle.fillAmount = 0; 
         }
+    }
+
+
+    public void HideDefaultScreen()
+    {
+        defaultUI.SetActive(false);
+    }
+
+    public void RevealDeathScreen()
+    {
+        HideDefaultScreen();
+        deathUI.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
     }
 }

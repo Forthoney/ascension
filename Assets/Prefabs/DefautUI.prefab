@@ -535,6 +535,8 @@ MonoBehaviour:
   weapon: {fileID: 0}
   chargeCircle: {fileID: 899117535}
   minCharge: 0.2
+  defaultUI: {fileID: 7098350708307911748}
+  deathUI: {fileID: 3206325140084536480}
 --- !u!114 &8273467022968062353
 MonoBehaviour:
   m_ObjectHideFlags: 0

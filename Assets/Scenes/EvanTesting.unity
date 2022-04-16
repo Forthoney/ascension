@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -128,6 +128,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8329992066975207508, guid: 28ddc3204ae18a248949220c64d2763f, type: 3}
   m_PrefabInstance: {fileID: 8329992067727296610}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &95947145 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 95947144, guid: 28ddc3204ae18a248949220c64d2763f, type: 3}
+  m_PrefabInstance: {fileID: 8329992067727296610}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95947143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7291da9470db1ee38bed3eb263330e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &121816824
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,7 +200,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 530cb89eb1f5dbf40af60021f5d648da, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -644,7 +655,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 530cb89eb1f5dbf40af60021f5d648da, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -902,7 +913,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20470
+  m_Name: pb_Mesh33184
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1280,7 +1291,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 530cb89eb1f5dbf40af60021f5d648da, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1565,13 +1576,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1356528325 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1078485677173964095, guid: 28ddc3204ae18a248949220c64d2763f, type: 3}
+  m_PrefabInstance: {fileID: 8329992067727296610}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 937356608f9ef43b48479f38b521a131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &1562887149
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20450
+  m_Name: pb_Mesh33162
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1729,6 +1751,28 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &1775019128 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8273467022968062353, guid: 88104bfb134b95a4c90ba4dd9104d788, type: 3}
+  m_PrefabInstance: {fileID: 7265762049319744427}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d8fabbb5d7f74c45a9b570634656674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2046325264 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1914060912, guid: 88104bfb134b95a4c90ba4dd9104d788, type: 3}
+  m_PrefabInstance: {fileID: 7265762049319744427}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d44783fbebebee74b8dfc2dd49aadfe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2051270045
 GameObject:
   m_ObjectHideFlags: 0
@@ -1891,7 +1935,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20490
+  m_Name: pb_Mesh33212
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2117,6 +2161,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1914060912, guid: 88104bfb134b95a4c90ba4dd9104d788, type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 1356528325}
+    - target: {fileID: 3206325140084536480, guid: 88104bfb134b95a4c90ba4dd9104d788, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6548701157712715769, guid: 88104bfb134b95a4c90ba4dd9104d788, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.06132078
+      objectReference: {fileID: 0}
+    - target: {fileID: 6548701157712715769, guid: 88104bfb134b95a4c90ba4dd9104d788, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.06132078
+      objectReference: {fileID: 0}
+    - target: {fileID: 6548701157712715769, guid: 88104bfb134b95a4c90ba4dd9104d788, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6548701157712715769, guid: 88104bfb134b95a4c90ba4dd9104d788, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1775019128}
+    - target: {fileID: 6548701157712715769, guid: 88104bfb134b95a4c90ba4dd9104d788, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RestartScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 6548701157712715769, guid: 88104bfb134b95a4c90ba4dd9104d788, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MainMenuLogic, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7098350708307911748, guid: 88104bfb134b95a4c90ba4dd9104d788, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7265762049172759370, guid: 88104bfb134b95a4c90ba4dd9104d788, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2214,6 +2294,62 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 95947144, guid: 28ddc3204ae18a248949220c64d2763f, type: 3}
+      propertyPath: INITIAL_HEALTH
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 95947144, guid: 28ddc3204ae18a248949220c64d2763f, type: 3}
+      propertyPath: deathEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 95947144, guid: 28ddc3204ae18a248949220c64d2763f, type: 3}
+      propertyPath: deathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 95947144, guid: 28ddc3204ae18a248949220c64d2763f, type: 3}
+      propertyPath: deathEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 95947144, guid: 28ddc3204ae18a248949220c64d2763f, type: 3}
+      propertyPath: deathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2046325264}
+    - target: {fileID: 95947144, guid: 28ddc3204ae18a248949220c64d2763f, type: 3}
+      propertyPath: deathEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 95947145}
+    - target: {fileID: 95947144, guid: 28ddc3204ae18a248949220c64d2763f, type: 3}
+      propertyPath: deathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 95947144, guid: 28ddc3204ae18a248949220c64d2763f, type: 3}
+      propertyPath: deathEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 95947144, guid: 28ddc3204ae18a248949220c64d2763f, type: 3}
+      propertyPath: deathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RevealDeathScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 95947144, guid: 28ddc3204ae18a248949220c64d2763f, type: 3}
+      propertyPath: deathEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PauseGameDeath
+      objectReference: {fileID: 0}
+    - target: {fileID: 95947144, guid: 28ddc3204ae18a248949220c64d2763f, type: 3}
+      propertyPath: deathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DefaultUILogic, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 95947144, guid: 28ddc3204ae18a248949220c64d2763f, type: 3}
+      propertyPath: deathEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: MortalInfo, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 95947144, guid: 28ddc3204ae18a248949220c64d2763f, type: 3}
+      propertyPath: deathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 95947144, guid: 28ddc3204ae18a248949220c64d2763f, type: 3}
+      propertyPath: deathEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8329992066975207508, guid: 28ddc3204ae18a248949220c64d2763f, type: 3}
       propertyPath: m_Name
       value: Player

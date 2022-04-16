@@ -24,6 +24,15 @@ public class MortalInfo : MonoBehaviour
 
     void Death() {
         deathEvent.Invoke();
-        Destroy(gameObject);    
+    }
+
+    public void DefaultDeath()
+    {
+        Destroy(gameObject);
+    }
+
+    public void PauseGameDeath()
+    {
+        Time.timeScale = 0;
     }
 }
