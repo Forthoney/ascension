@@ -94,6 +94,8 @@ GameObject:
   - component: {fileID: 7646851648701655368}
   - component: {fileID: 3952039649209159464}
   - component: {fileID: 254127083532443975}
+  - component: {fileID: 3038634397349989525}
+  - component: {fileID: -6485951585715304239}
   m_Layer: 0
   m_Name: StandardEnemy
   m_TagString: Enemy
@@ -159,7 +161,19 @@ MonoBehaviour:
   INITIAL_HEALTH: 100
   deathEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3952039649209159464}
+        m_TargetAssemblyTypeName: MortalInfo, Assembly-CSharp
+        m_MethodName: DefaultDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &254127083532443975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,9 +187,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   viewRange: 60
-  turnRate: 3
-  moveRate: 10
+  turnRate: 5
+  moveRate: 12
   stopRange: 5
+--- !u!114 &3038634397349989525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7646851648701655366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dce76f4bc39472a479310bcbc51faf2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewRange: 50
+  turnRate: 10
+  moveRate: 8
+  changeBehaviorProximity: 15
+--- !u!114 &-6485951585715304239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7646851648701655366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c93393f41f0e73f4788d948f074c313f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewRange: 50
+  turnRate: 10
+  moveRate: 8
+  radius: 5
 --- !u!1001 &7646851648471706293
 PrefabInstance:
   m_ObjectHideFlags: 0

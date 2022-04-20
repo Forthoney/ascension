@@ -1,3 +1,5 @@
+using System;
+
 namespace Enemy
 {
     using System.Collections;
@@ -8,21 +10,21 @@ namespace Enemy
     
     public abstract class Movement : MonoBehaviour
     { 
-        [SerializeField] private float viewRange; 
-        [SerializeField] private float turnRate;
-        [SerializeField] private float moveRate;
+        [SerializeField] private float viewRange = 50; 
+        [SerializeField] private float turnRate = 10;
+        [SerializeField] private float moveRate = 8;
         
         protected Transform target;
 
-        void Awake()
+        protected virtual void Awake()
         {
             target = GameObject.FindGameObjectWithTag("Player").transform;
         }
-    
+
         protected bool CanSeePlayer()
         {
             Vector3 currentPosition = transform.position;
-            return Physics.Raycast(currentPosition, (target.position - currentPosition).normalized, out RaycastHit hit, viewRange);
+            return Physics.Raycast(currentPosition, (target.position - currentPosition).normalized, out var hit, viewRange);
         }
         
         protected void FaceTarget() 
@@ -37,9 +39,9 @@ namespace Enemy
             return Vector3.Distance(target.position, transform.position);
         }
 
-        protected void GoTo(Vector3 location)
+        protected void GoTo(Vector3 destination)
         {
-            transform.position = Vector3.MoveTowards(transform.position, location, moveRate * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, destination, moveRate * Time.deltaTime);
         }
     }
 }

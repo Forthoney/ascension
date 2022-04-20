@@ -9,4 +9,13 @@ public class MainMenuLogic : MonoBehaviour
     {
         SceneManager.LoadScene(newScene);
     }
+
+    public void RestartScene()
+    {
+        Time.timeScale = 1; 
+        print("Restarting!");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        print("Restarting Scene complete");
+        
+    }
 }
