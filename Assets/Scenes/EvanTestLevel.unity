@@ -2739,6 +2739,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3659407004977743351, guid: 44ca27f5a238d703fbd4512651ef8dfe, type: 3}
+      propertyPath: defaultCooldown
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5312218181196863470, guid: 44ca27f5a238d703fbd4512651ef8dfe, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
