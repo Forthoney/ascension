@@ -8,15 +8,30 @@ namespace Enemy
     {
         [SerializeField] private float changeBehaviorProximity = 15f;
         private Movement currentMovement;
+        private AggressiveMovement aggressiveMovement;
+        private RandomMovement randomMovement;
+
+        private void Start()
+        {
+            aggressiveMovement = gameObject.GetComponent<AggressiveMovement>();
+            randomMovement = gameObject.GetComponent<RandomMovement>();
+        }
+
         void Update()
         {
             if (DistanceToTarget() > changeBehaviorProximity)
             {
-                SelectMovement(gameObject.GetComponent<AggressiveMovement>());
+                if (currentMovement != aggressiveMovement)
+                {
+                    SelectMovement(aggressiveMovement);
+                }
             }
             else
             {
-                SelectMovement(gameObject.GetComponent<RandomMovement>());
+                if (currentMovement != randomMovement)
+                {
+                    SelectMovement(randomMovement);
+                }
             }
         }
         
