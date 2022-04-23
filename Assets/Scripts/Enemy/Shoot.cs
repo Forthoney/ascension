@@ -8,7 +8,17 @@ namespace Enemy
     
         public WeaponBehavior weapon;
 
+        [SerializeField] private Animator shootAnimator;
+        private bool testVal;
+
+        void Start()
+        {
+            shootAnimator = GetComponentInChildren<Animator>();
+            testVal = true;
+        }
+
         // Update is called once per frame
+
         void Update()
         {
             if (IsAiming() && weapon.CanShoot()) {
@@ -18,6 +28,10 @@ namespace Enemy
 
         private void ShootWeapon() {
             weapon.Shoot();
+            Debug.Log("shootweapon called.");
+            //Debug.Log(shootAnimator);
+            shootAnimator.Play("Fire");
+            //testVal = false;
             Knockback(weapon.GetKnockback());
         }
 
