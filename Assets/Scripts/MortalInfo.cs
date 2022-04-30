@@ -6,8 +6,10 @@ using UnityEngine.Events;
 public class MortalInfo : MonoBehaviour
 {
     [SerializeField] private int INITIAL_HEALTH = 100;
+    [SerializeField] private int maxHealth = 100;
     private int health;
     public UnityEvent deathEvent;
+    public UnityEvent onHitEvent; 
     // Start is called before the first frame update
     
     void Start() {
@@ -20,6 +22,12 @@ public class MortalInfo : MonoBehaviour
         if (health <= 0) {
             Death();
         }
+        onHitEvent.Invoke();
+    }
+
+    public void Heal(int amount)
+    {
+        health = Mathf.Min(health + amount, maxHealth); 
     }
 
     void Death() {

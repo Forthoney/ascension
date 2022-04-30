@@ -12,6 +12,9 @@ public class DefaultUILogic : MonoBehaviour
 
     public GameObject defaultUI;
     public GameObject deathUI;
+    public GameObject pauseUI;
+
+    bool paused = false; 
 
     // Update is called once per frame
     void Update()
@@ -34,6 +37,51 @@ public class DefaultUILogic : MonoBehaviour
     {
         defaultUI.SetActive(false);
     }
+
+    public void ShowDefaultScreen()
+    {
+        defaultUI.SetActive(true);
+    }
+
+
+    public void TogglePause()
+    {
+
+        if (paused)
+        {
+            UnPause();
+        }
+        else
+        {
+            Pause();
+        }
+    }
+
+
+    public void Pause()
+    {
+
+        paused = true; 
+        HideDefaultScreen();
+        pauseUI.SetActive(true);
+
+        Time.timeScale = 0;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void UnPause()
+    {
+        paused = false; 
+        ShowDefaultScreen();
+        pauseUI.SetActive(false);
+
+        Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.Locked;
+
+    }
+
+
+    
 
     public void RevealDeathScreen()
     {

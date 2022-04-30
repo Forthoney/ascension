@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerInput : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private Transform cameraParent;
     [SerializeField] private WeaponBehavior weapon;
     [SerializeField] private MouseLook mouse;
+
+    public UnityEvent onPause; 
 
     private void Update()
     {
@@ -59,12 +62,17 @@ public class PlayerInput : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            onPause.Invoke();
+        }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+
+        /*if (Input.GetKeyDown(KeyCode.Q))
         {
             // Rotate 180 
             mouse.StartRotate(1, .3f);
-        }
+        }*/
 
     }
 }
