@@ -15,6 +15,7 @@ namespace Enemy
         {
             aggressiveMovement = gameObject.GetComponent<AggressiveMovement>();
             randomMovement = gameObject.GetComponent<RandomMovement>();
+            currentMovement = aggressiveMovement;
         }
 
         void Update()
