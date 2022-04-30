@@ -66,3 +66,4 @@ Packages/packages-lock.json
 Packages/manifest.json
 Packages/packages-lock.json
 *.xml
+.DS_Store
