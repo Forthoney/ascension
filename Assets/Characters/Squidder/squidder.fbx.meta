@@ -8,7 +8,7 @@ ModelImporter:
     second: Armature|Squid Idle
   - first:
       74: -5100222805370824492
-    second: Armature|Squid Fire
+    second: Fire
   - first:
       74: 1637978020875783869
     second: Armature|Squid Idle
@@ -75,7 +75,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Squid Fire
+      name: Fire
       takeName: Armature|Squid Fire
       internalID: 0
       firstFrame: 0

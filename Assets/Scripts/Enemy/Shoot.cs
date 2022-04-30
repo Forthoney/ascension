@@ -21,7 +21,7 @@ namespace Enemy
         {
             if (IsAiming() && weapon.CanShoot()) 
             {
-                weapon.Shoot();
+                ShootWeapon();
                 Knockback(weapon.GetKnockback());
             }
         }
