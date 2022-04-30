@@ -238,4 +238,5 @@ public abstract class WeaponBehavior : MonoBehaviour
     {
         return (currentCooldown <= 0f);
     }
+
 }

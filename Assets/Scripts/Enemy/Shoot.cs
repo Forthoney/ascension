@@ -21,15 +21,19 @@ namespace Enemy
         {
             if (IsAiming() && weapon.CanShoot()) 
             {
-                weapon.Shoot();
+                ShootWeapon();
                 Knockback(weapon.GetKnockback());
             }
         }
 
         private void ShootWeapon() {
-            weapon.Shoot();
+            //weapon.Shoot();
             shootAnimator.Play("Fire");
             Knockback(weapon.GetKnockback());
+        }
+
+        private void ActuallyFireWeapon() {
+            weapon.Shoot();
         }
 
         private void Knockback(float recoil) 
