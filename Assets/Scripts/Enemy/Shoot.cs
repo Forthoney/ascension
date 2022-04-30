@@ -5,15 +5,10 @@ namespace Enemy
     public class Shoot : MonoBehaviour
     {
 
-        public float shootRange = 30f;
-    
-        public WeaponBehavior weapon;
-
         [SerializeField] private Animator shootAnimator;
         [SerializeField] private float shootRange = 30f;
         [SerializeField] private WeaponBehavior weapon;
-        
-        private float duration = 2f;
+        [SerializeField] private float duration = 2f;
         
         void Start()
         {
