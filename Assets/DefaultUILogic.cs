@@ -14,6 +14,11 @@ public class DefaultUILogic : MonoBehaviour
     public GameObject deathUI;
     public GameObject pauseUI;
 
+    // TODO: put this in a separate script
+    public Image hitTint;
+    public Color tint;
+    public MortalInfo info;
+
     bool paused = false; 
 
     // Update is called once per frame
@@ -30,6 +35,16 @@ public class DefaultUILogic : MonoBehaviour
         {
             chargeCircle.fillAmount = 0; 
         }
+
+
+        // TODO: Tweening!!
+        float healthPercent = (float) info.GetHealth() / (float) info.GetMaxHealth();
+
+
+        tint.a = 1 - (0.6f + (0.4f * healthPercent));
+        hitTint.color = tint; 
+
+        
     }
 
 

@@ -12,8 +12,21 @@ public class MortalInfo : MonoBehaviour
     public UnityEvent onHitEvent; 
     // Start is called before the first frame update
     
+
+
+
     void Start() {
         health = INITIAL_HEALTH;
+    }
+
+    public int GetHealth()
+    {
+        return health; 
+    }
+
+    public int GetMaxHealth()
+    {
+        return maxHealth;
     }
 
     public void TakeDamage(int amount) {

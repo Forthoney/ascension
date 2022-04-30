@@ -569,8 +569,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ccccb04d6d592e4d8ab9c632ea5170b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initialHealthChargeDelay: 1
-  _healthRechargeTime: 0.5
+  _initialHealthChargeDelay: 3
+  _healthRechargeTime: 1
 --- !u!114 &2651841421217810367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -773,6 +773,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8329992066975207509}
     m_Modifications:
+    - target: {fileID: 1914060912, guid: 88104bfb134b95a4c90ba4dd9104d788, type: 3}
+      propertyPath: info
+      value: 
+      objectReference: {fileID: 95947144}
     - target: {fileID: 1914060912, guid: 88104bfb134b95a4c90ba4dd9104d788, type: 3}
       propertyPath: weapon
       value: 
