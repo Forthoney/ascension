@@ -95,8 +95,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewRange: 60
   turnRate: 5
-  moveRate: 12
-  stopRange: 5
+  moveRate: 6
+  stopRange: 10
 --- !u!114 &-6485951585715304239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,8 +111,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewRange: 50
   turnRate: 10
-  moveRate: 8
-  radius: 5
+  moveRate: 2
+  radius: 3
 --- !u!114 &3038634397349989525
 MonoBehaviour:
   m_ObjectHideFlags: 0

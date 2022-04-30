@@ -27,6 +27,7 @@ public class PlayerInput : MonoBehaviour
 
                     if (weapon.cancelCharge)
                     {
+                        Debug.Log("Cancel charge!");
                         movement.SetVelocity(-cameraParent.forward * weapon.GetKnockback());
                     }
                     else { 
@@ -45,7 +46,16 @@ public class PlayerInput : MonoBehaviour
             if (weapon.chargeable && weapon.CanShoot())
             {
                 weapon.Shoot();
-                movement.Knockback(-cameraParent.forward, weapon.GetKnockback());
+
+                if (weapon.cancelCharge)
+                {
+                    Debug.Log("Cancel charge!");
+                    movement.SetVelocity(-cameraParent.forward * weapon.GetKnockback());
+                }
+                else
+                {
+                    movement.Knockback(-cameraParent.forward, weapon.GetKnockback());
+                }
             }
         }
 
