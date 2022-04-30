@@ -7008,7 +7008,7 @@ PrefabInstance:
       objectReference: {fileID: 161681531}
     - target: {fileID: 699282417772000721, guid: e3c8120780f5fb64fa3e087082cf16f9, type: 3}
       propertyPath: travelTime
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 699282417772000732, guid: e3c8120780f5fb64fa3e087082cf16f9, type: 3}
       propertyPath: m_Name
@@ -7107,7 +7107,7 @@ PrefabInstance:
       objectReference: {fileID: 154750876}
     - target: {fileID: 699282417772000721, guid: e3c8120780f5fb64fa3e087082cf16f9, type: 3}
       propertyPath: travelTime
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 699282417772000732, guid: e3c8120780f5fb64fa3e087082cf16f9, type: 3}
       propertyPath: m_Name
@@ -27718,8 +27718,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 20, y: 20, z: 20}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 20, y: 1.1823883, z: 20}
+  m_Center: {x: 0, y: -9.408806, z: 0}
 --- !u!1001 &1059321656
 PrefabInstance:
   m_ObjectHideFlags: 0

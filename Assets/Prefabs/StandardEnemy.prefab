@@ -68,6 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   INITIAL_HEALTH: 100
+  maxHealth: 100
   deathEvent:
     m_PersistentCalls:
       m_Calls:
@@ -83,6 +84,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onHitEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &254127083532443975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,7 +304,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: c870280a1c679a2479467a23a209dbc6, type: 2}
     - target: {fileID: 6401796808133209922, guid: 03379fa4b03b048399a1b118963fcc2f, type: 3}
       propertyPath: defaultCooldown
-      value: 5
+      value: 1.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03379fa4b03b048399a1b118963fcc2f, type: 3}
