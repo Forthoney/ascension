@@ -95,7 +95,19 @@ MonoBehaviour:
   INITIAL_HEALTH: 1
   deathEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6535265975388359302}
+        m_TargetAssemblyTypeName: MortalInfo, Assembly-CSharp
+        m_MethodName: DefaultDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8788003665728549895
 GameObject:
   m_ObjectHideFlags: 0
