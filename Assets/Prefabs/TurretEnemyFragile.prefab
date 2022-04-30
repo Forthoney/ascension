@@ -61,8 +61,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7ec4277180582549872e4c91090a777, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootRange: 60
+  shootAnimator: {fileID: 0}
+  shootRange: 0
   weapon: {fileID: 1258633387688390263}
+  duration: 2
 --- !u!114 &814179692861037673
 MonoBehaviour:
   m_ObjectHideFlags: 0
