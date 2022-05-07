@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 814179692861037673}
   - component: {fileID: 6535265975388359302}
   - component: {fileID: 5074273156578036474}
+  - component: {fileID: 8523228755851949241}
   m_Layer: 0
   m_Name: TurretEnemy 1
   m_TagString: Enemy
@@ -116,6 +117,25 @@ CapsuleCollider:
   m_Height: 6.356449
   m_Direction: 1
   m_Center: {x: -0.14096403, y: 1.1595912, z: -0.28191376}
+--- !u!95 &8523228755851949241
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866159622267812286}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 5d0e4fa4c789f4a968e5348b21f80932, type: 3}
+  m_Controller: {fileID: 9100000, guid: b629fc8501c934a3997e9042c7511870, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &5305328470796960053
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -169,6 +189,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4310191179500393480, guid: 03379fa4b03b048399a1b118963fcc2f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310191179500393482, guid: 03379fa4b03b048399a1b118963fcc2f, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4310191179500393482, guid: 03379fa4b03b048399a1b118963fcc2f, type: 3}
@@ -265,10 +289,15 @@ PrefabInstance:
       value: Floater
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 5d0e4fa4c789f4a968e5348b21f80932, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 5d0e4fa4c789f4a968e5348b21f80932, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: b629fc8501c934a3997e9042c7511870, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5866666021909216657, guid: 5d0e4fa4c789f4a968e5348b21f80932, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5d0e4fa4c789f4a968e5348b21f80932, type: 3}
 --- !u!4 &7594322297211404308 stripped
 Transform:
