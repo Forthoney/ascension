@@ -202,6 +202,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LaunchPad
       objectReference: {fileID: 0}
+    - target: {fileID: 699282417772000734, guid: e3c8120780f5fb64fa3e087082cf16f9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9cc0cc667e255024e8947dbeab616ff1, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3c8120780f5fb64fa3e087082cf16f9, type: 3}
 --- !u!4 &7060532824288645111 stripped
