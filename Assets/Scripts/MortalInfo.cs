@@ -10,6 +10,7 @@ public class MortalInfo : MonoBehaviour
     private int health;
     public UnityEvent deathEvent;
     public UnityEvent onHitEvent;
+    public UnityEvent onHealEvent; 
     // Start is called before the first frame update
 
 
@@ -38,7 +39,8 @@ public class MortalInfo : MonoBehaviour
 
     public void Heal(int amount)
     {
-        health = Mathf.Min(health + amount, maxHealth); 
+        health = Mathf.Min(health + amount, maxHealth);
+        onHealEvent.Invoke();
     }
 
     void Death() {
