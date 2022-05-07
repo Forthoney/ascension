@@ -27,6 +27,16 @@ public class SoundManager : MonoBehaviour
 		}
 	}
 
+	/*public AudioClip EmptyEffectsSource()
+	{
+
+		
+		else
+		{
+			return EffectsSource[0];
+		}
+	}*/
+
 
 	// Play a single clip through the sound effects source.
 	public void Play(AudioClip clip, float lowPitch = 1, float highPitch = 1)
