@@ -9542,7 +9542,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eff90f39b7b5c384b829853438156e95, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.44485
+      value: -0.30285642
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eff90f39b7b5c384b829853438156e95, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9550,7 +9550,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eff90f39b7b5c384b829853438156e95, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.25
+      value: 1.106212
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eff90f39b7b5c384b829853438156e95, type: 3}
       propertyPath: m_LocalRotation.w
@@ -27983,10 +27983,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1082124249}
-    - target: {fileID: 7606577994474377387, guid: 61ee751e3fea21848a1a37d5d0e5c879, type: 3}
-      propertyPath: m_Name
-      value: SecondRoom
-      objectReference: {fileID: 0}
     - target: {fileID: 7741882838353215460, guid: 61ee751e3fea21848a1a37d5d0e5c879, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -32760,7 +32756,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-105840
+  m_Name: pb_Mesh-96200
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
