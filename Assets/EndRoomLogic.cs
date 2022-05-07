@@ -9,7 +9,10 @@ public class EndRoomLogic : MonoBehaviour
     public string nextScene;
     private void OnTriggerEnter(Collider other)
     {
-        print("level complete!");
-        SceneManager.LoadScene(nextScene);
+        if (other.tag.Equals("Player"))
+        {
+            print("level complete!");
+            SceneManager.LoadScene(nextScene);
+        }
     }
 }
