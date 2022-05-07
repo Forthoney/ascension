@@ -694,6 +694,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6718856521622063720}
     - target: {fileID: 1467944299959378802, guid: 27165b534aaa64cac87dc9112a7511b9, type: 3}
+      propertyPath: playSound
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1467944299959378802, guid: 27165b534aaa64cac87dc9112a7511b9, type: 3}
       propertyPath: chargeable
       value: 1
       objectReference: {fileID: 0}
@@ -701,6 +705,10 @@ PrefabInstance:
       propertyPath: playerView
       value: 
       objectReference: {fileID: 4904174322026701875}
+    - target: {fileID: 1467944299959378802, guid: 27165b534aaa64cac87dc9112a7511b9, type: 3}
+      propertyPath: chargeSound
+      value: 
+      objectReference: {fileID: 8300000, guid: bbb294a7550342149b37882232f1d57f, type: 3}
     - target: {fileID: 1467944299959378802, guid: 27165b534aaa64cac87dc9112a7511b9, type: 3}
       propertyPath: shakeDuration
       value: 0.2
@@ -737,6 +745,18 @@ PrefabInstance:
       propertyPath: chargeLevels.Array.data[2].knockback
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 1467944299959378802, guid: 27165b534aaa64cac87dc9112a7511b9, type: 3}
+      propertyPath: chargeLevels.Array.data[0].shootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: ae1717033d0a4ce4ba1d69071384fe33, type: 3}
+    - target: {fileID: 1467944299959378802, guid: 27165b534aaa64cac87dc9112a7511b9, type: 3}
+      propertyPath: chargeLevels.Array.data[1].shootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 3ef71a9f91ecf984994908a4985d8c03, type: 3}
+    - target: {fileID: 1467944299959378802, guid: 27165b534aaa64cac87dc9112a7511b9, type: 3}
+      propertyPath: chargeLevels.Array.data[2].shootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7514246d8e640bb45827307f1fd300b7, type: 3}
     - target: {fileID: 1527405006479198821, guid: 27165b534aaa64cac87dc9112a7511b9, type: 3}
       propertyPath: m_Layer
       value: 10
