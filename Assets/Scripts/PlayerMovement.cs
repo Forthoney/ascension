@@ -11,22 +11,28 @@ public class PlayerMovement : MonoBehaviour
         //DASHING = 2,
     }
 
-    public MoveState curState = MoveState.DEFAULT; 
 
+    public Vector3 curVelocity = new Vector3(0, 0, 0);
+    public MoveState curState = MoveState.DEFAULT;
+
+    public CharacterController controller;
+
+    private float curDashCooldown = 0;
+
+
+    [Header("Dash")]
     public float dashSpeed = 15.0f;
     public float wallDashSpeed = 10.0f;
     public float dashCooldown = 5.0f;
 
-    public Vector3 curVelocity = new Vector3(0, 0, 0);
 
-
-    public Rigidbody body;
-    public CharacterController controller;
-    
-    private float curDashCooldown = 0;
-
+    [Header("Wall Hit Variables")]
     public float wallHitCooldown = 0.2f;
     private float curWallHitCooldown = 0.0f;
+
+    [Header("Sound Stuff")]
+    [SerializeField] private AudioClip dashSound;
+    [SerializeField] private AudioClip collideSound;
 
 
     private void FixedUpdate()
@@ -53,6 +59,7 @@ public class PlayerMovement : MonoBehaviour
         {
             curVelocity = direction * dashSpeed;
             curDashCooldown = dashCooldown;
+            PlayDashSound();
         }
         else
         {
@@ -66,6 +73,15 @@ public class PlayerMovement : MonoBehaviour
             curDashCooldown = 0; 
             curState = MoveState.DEFAULT;
             curWallHitCooldown = wallHitCooldown;
+            PlayDashSound();
+        }
+    }
+
+    public void PlayDashSound()
+    {
+        if (dashSound != null)
+        {
+            SoundManager.Audio.Play(dashSound, 0.95f, 0.95f);
         }
     }
 
@@ -112,6 +128,7 @@ public class PlayerMovement : MonoBehaviour
             curVelocity = Vector3.zero;
             curState = MoveState.WALL;      
             Debug.Log(curVelocity.ToString());
+            SoundManager.Audio.Play(collideSound, 0.95f, 0.95f);
         }
         
         

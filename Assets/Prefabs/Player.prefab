@@ -493,14 +493,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9fe912bd1294d743a33d6525fe4b1d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  curVelocity: {x: 0, y: 0, z: 0}
   curState: 0
+  controller: {fileID: 8329992066975207518}
   dashSpeed: 7
   wallDashSpeed: 5
   dashCooldown: 5
-  curVelocity: {x: 0, y: 0, z: 0}
-  body: {fileID: 0}
-  controller: {fileID: 8329992066975207518}
   wallHitCooldown: 0.15
+  dashSound: {fileID: 8300000, guid: afb7f596e44ce9142ae98ea81b413e69, type: 3}
+  collideSound: {fileID: 8300000, guid: 2b344d2822bb47646bb6adceece76e70, type: 3}
 --- !u!114 &95947144
 MonoBehaviour:
   m_ObjectHideFlags: 0

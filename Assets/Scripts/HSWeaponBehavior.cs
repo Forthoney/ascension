@@ -20,6 +20,8 @@ public class HSWeaponBehavior : WeaponBehavior
     [Header("Weapon Spread Settings")]
     [SerializeField] private float maxAngleDeviation = 5f;
 
+    
+
 
     public override void Shoot()
     {
@@ -32,6 +34,8 @@ public class HSWeaponBehavior : WeaponBehavior
         ResetCooldown();
 
         PlayAnimation();
+
+        SoundManager.Audio.Play(shootSound, 0.98f, 1.02f);
     }
 
     private void ShootRay(Transform fpsCamera)

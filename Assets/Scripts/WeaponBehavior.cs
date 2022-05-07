@@ -14,14 +14,16 @@ public class ChargeRow
     public float knockback;
     public Color color;
     public bool cancelVelocity;
+    public AudioClip shootSound;
 
-    public ChargeRow(float time, int dmg, float knock, Color col, bool cancel)
+    public ChargeRow(float time, int dmg, float knock, Color col, bool cancel, AudioClip sound)
     {
         this.time = time;
         this.damage = dmg; 
         this.knockback = knock;
         this.color = col;
         this.cancelVelocity = cancel;
+        this.shootSound = sound;
     }
 
 
@@ -49,6 +51,11 @@ public class ChargeRow
     {
         return cancelVelocity;
     }
+
+    public AudioClip GetSound()
+    {
+        return shootSound;
+    }
 }
 
 public abstract class WeaponBehavior : MonoBehaviour
@@ -69,7 +76,7 @@ public abstract class WeaponBehavior : MonoBehaviour
     [SerializeField] private float maxChargeTime = 1.5f;
     // Array with seconds in, damage, and knockback level
 
-    [SerializeField] private ChargeRow[] chargeLevels =  { new ChargeRow(0.25f, 50, 4, Color.green, false), new ChargeRow(0.75f, 100, 12, Color.yellow, false), new ChargeRow(1.25f, 200, 24, Color.red, true) };
+    [SerializeField] private ChargeRow[] chargeLevels =  { new ChargeRow(0.25f, 50, 4, Color.green, false, null), new ChargeRow(0.75f, 100, 12, Color.yellow, false, null), new ChargeRow(1.25f, 200, 24, Color.red, true, null) };
     private float curChargeTime = 0;
 
 
@@ -83,7 +90,14 @@ public abstract class WeaponBehavior : MonoBehaviour
     [SerializeField] private ParticleSystem impactParticles;
     [SerializeField] private TrailRenderer bulletTrail;
     [SerializeField] private GameObject muzzle;
-    [SerializeField] private LayerMask hittable; 
+    [SerializeField] private LayerMask hittable;
+
+    [Header("Sound Settings")]
+    [SerializeField] private bool playSound = false;
+    [SerializeField] private AudioClip chargeSound;
+    [SerializeField] private AudioSource source = null;
+    // this one is overrided by charge stuff, unless there is no charging
+    [SerializeField] protected AudioClip shootSound;
 
 
 
@@ -129,6 +143,8 @@ public abstract class WeaponBehavior : MonoBehaviour
         if (chargeable)
         {
             charging = true;
+
+            SoundManager.Audio.Play(chargeSound, 0.98f, 1.02f);
         }
     }
 
@@ -189,6 +205,7 @@ public abstract class WeaponBehavior : MonoBehaviour
             knockback = chargeLevels[chargeLevel].GetKnockback();
             curChargeColor = chargeLevels[chargeLevel].GetColor();
             cancelCharge = chargeLevels[chargeLevel].CancelVelocity();
+            shootSound = chargeLevels[chargeLevel].GetSound();
 
             Debug.Log("CHARGE LEVEL " + chargeLevel.ToString() + " dmg " + damage.ToString() + " knockback " + knockback.ToString());
 
