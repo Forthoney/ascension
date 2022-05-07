@@ -76,7 +76,6 @@ public class DefaultUILogic : MonoBehaviour
 
     public void RevealDeathScreen()
     {
-        PauseGame();
         defaultUI.SetActive(false);
         Time.timeScale = 0.001f;
         
