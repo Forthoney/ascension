@@ -558,6 +558,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onHealEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &8400230820093910478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -752,7 +755,7 @@ PrefabInstance:
     - target: {fileID: 1467944299959378802, guid: 27165b534aaa64cac87dc9112a7511b9, type: 3}
       propertyPath: chargeLevels.Array.data[1].shootSound
       value: 
-      objectReference: {fileID: 8300000, guid: 3ef71a9f91ecf984994908a4985d8c03, type: 3}
+      objectReference: {fileID: 8300000, guid: 7514246d8e640bb45827307f1fd300b7, type: 3}
     - target: {fileID: 1467944299959378802, guid: 27165b534aaa64cac87dc9112a7511b9, type: 3}
       propertyPath: chargeLevels.Array.data[2].shootSound
       value: 
