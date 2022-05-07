@@ -6,7 +6,6 @@ using UnityEngine;
 // Watch video: https://www.youtube.com/watch?v=THnivyG0Mvo
 public class HSWeaponBehavior : WeaponBehavior
 {
-
     [Header("General Settings and Associations")]
     [SerializeField] private float range = 100f;
     [SerializeField] private Camera playerView;
@@ -19,10 +18,7 @@ public class HSWeaponBehavior : WeaponBehavior
 
     [Header("Weapon Spread Settings")]
     [SerializeField] private float maxAngleDeviation = 5f;
-
     
-
-
     public override void Shoot()
     {
 
@@ -54,7 +50,7 @@ public class HSWeaponBehavior : WeaponBehavior
         {
             ApplyDamage(hit);
             OnHitVisuals(hit);
-            if (hit.transform.tag == "Enemy") Debug.Log(Random.Range(1, 10000) + " shot an enemy");
+            if (hit.transform.CompareTag("Enemy")) Debug.Log(Random.Range(1, 10000) + " shot an enemy");
         }
 
     }
@@ -88,8 +84,7 @@ public class HSWeaponBehavior : WeaponBehavior
             hitStats.TakeDamage(this.damage);
         }
     }
-
-
+    
     public override float GetKnockback()
     {
         return knockback;

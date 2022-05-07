@@ -5,14 +5,13 @@ using UnityEngine.UI;
 
 public class DefaultUILogic : MonoBehaviour
 {
+    [SerializeField] private WeaponBehavior weapon;
+    [SerializeField] private Image chargeCircle;
+    [SerializeField] private float minCharge = 0.2f;
 
-    public WeaponBehavior weapon;
-    public Image chargeCircle;
-    public float minCharge = 0.2f;
-
-    public GameObject defaultUI;
-    public GameObject deathUI;
-    public GameObject pauseUI;
+    [SerializeField] private GameObject defaultUI;
+    [SerializeField] private GameObject deathUI;
+    [SerializeField] private GameObject pauseUI;
 
     // TODO: put this in a separate script
     public Image hitTint;
@@ -35,73 +34,51 @@ public class DefaultUILogic : MonoBehaviour
         {
             chargeCircle.fillAmount = 0; 
         }
-
-
+        
         // TODO: Tweening!!
         float healthPercent = (float) info.GetHealth() / (float) info.GetMaxHealth();
-
-
         tint.a = 1 - (0.6f + (0.4f * healthPercent));
-        hitTint.color = tint; 
-
-        
+        hitTint.color = tint;
     }
-
-
-    public void HideDefaultScreen()
-    {
-        defaultUI.SetActive(false);
-    }
-
-    public void ShowDefaultScreen()
-    {
-        defaultUI.SetActive(true);
-    }
-
 
     public void TogglePause()
     {
-
+        if (deathUI.activeSelf) return;
         if (paused)
         {
-            UnPause();
+            defaultUI.SetActive(true);
+            UnpauseGame();
         }
         else
         {
-            Pause();
+            defaultUI.SetActive(false);
+            PauseGame();
         }
     }
-
-
-    public void Pause()
+    
+    private void PauseGame()
     {
-
         paused = true; 
-        HideDefaultScreen();
         pauseUI.SetActive(true);
 
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
     }
 
-    public void UnPause()
+    private void UnpauseGame()
     {
         paused = false; 
-        ShowDefaultScreen();
         pauseUI.SetActive(false);
 
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.Locked;
-
     }
-
-
-    
 
     public void RevealDeathScreen()
     {
-        HideDefaultScreen();
-        //Time.timeScale = 0.001f; 
+        defaultUI.SetActive(false);
+        Time.timeScale = 0.001f;
+        
         deathUI.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
     }
