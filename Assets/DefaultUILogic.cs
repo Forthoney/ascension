@@ -62,13 +62,16 @@ public class DefaultUILogic : MonoBehaviour
     public void TogglePause()
     {
 
-        if (paused)
+        if (!deathUI.active)
         {
-            UnPause();
-        }
-        else
-        {
-            Pause();
+            if (paused)
+            {
+                UnPause();
+            }
+            else
+            {
+                Pause();
+            }
         }
     }
 
@@ -100,8 +103,10 @@ public class DefaultUILogic : MonoBehaviour
 
     public void RevealDeathScreen()
     {
+        paused = true; 
         HideDefaultScreen();
-        //Time.timeScale = 0.001f; 
+        Time.timeScale = 0.001f;
+        
         deathUI.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
     }
