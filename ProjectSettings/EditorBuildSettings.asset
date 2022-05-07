@@ -9,8 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: c6dac206122287c47915b34fd386ae59
   - enabled: 1
-    path: Assets/Scenes/YouWin.unity
-    guid: cbb642692f3280e4ab932896d8d9405e
+    path: Assets/Scenes/Credits.unity
+    guid: 2b7ed65172b4de74d897b6252b3ceb9b
+  - enabled: 1
+    path: Assets/Scenes/Dex1ForArt.unity
+    guid: 90a0c1dc9fef2ee4eade818189180e68
   - enabled: 1
     path: Assets/Scenes/LevelSmall.unity
     guid: 569678ef3fe872c4bab1037bbeb8c5bf
@@ -18,9 +21,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Dex2ForArt.unity
     guid: d6ea56cbd0510194cb24a7625d618370
   - enabled: 1
-    path: Assets/Scenes/Dex1ForArt.unity
-    guid: 90a0c1dc9fef2ee4eade818189180e68
-  - enabled: 1
-    path: Assets/Scenes/Credits.unity
-    guid: 2b7ed65172b4de74d897b6252b3ceb9b
+    path: Assets/Scenes/YouWin.unity
+    guid: cbb642692f3280e4ab932896d8d9405e
   m_configObjects: {}
