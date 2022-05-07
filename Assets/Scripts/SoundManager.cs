@@ -6,7 +6,7 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
 	// Audio players components.
-	public AudioSource EffectsSource;
+	public AudioSource[] EffectsSource;
 	public AudioSource MusicSource;
 
 	// Singleton instance.
@@ -27,15 +27,19 @@ public class SoundManager : MonoBehaviour
 		}
 	}
 
-	/*public AudioClip EmptyEffectsSource()
+	public AudioSource EmptyEffectsSource()
 	{
 
-		
-		else
+		for (int i = 0; i < EffectsSource.Length; i++)
 		{
-			return EffectsSource[0];
+			if (!EffectsSource[i].isPlaying)
+			{
+				return EffectsSource[i];
+			}
 		}
-	}*/
+		
+		return EffectsSource[0];
+	}
 
 
 	// Play a single clip through the sound effects source.
@@ -43,9 +47,11 @@ public class SoundManager : MonoBehaviour
 	{
 		float randomPitch = Random.Range(lowPitch, highPitch);
 
-		EffectsSource.pitch = randomPitch;
-		EffectsSource.clip = clip;
-		EffectsSource.Play();
+		AudioSource effectSource = EmptyEffectsSource();
+
+		effectSource.pitch = randomPitch;
+		effectSource.clip = clip;
+		effectSource.Play();
 	}
 
 	// Play a single clip through the music source.
@@ -67,9 +73,11 @@ public class SoundManager : MonoBehaviour
 		int randomIndex = Random.Range(0, clips.Length);
 		float randomPitch = Random.Range(lowPitch, highPitch);
 
-		EffectsSource.pitch = randomPitch;
-		EffectsSource.clip = clips[randomIndex];
-		EffectsSource.Play();
+		AudioSource effectSource = EmptyEffectsSource();
+
+		effectSource.pitch = randomPitch;
+		effectSource.clip = clips[randomIndex];
+		effectSource.Play();
 	}
 
 }
