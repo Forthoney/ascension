@@ -9,10 +9,8 @@ public class MortalInfo : MonoBehaviour
     [SerializeField] private int maxHealth = 100;
     private int health;
     public UnityEvent deathEvent;
-    public UnityEvent onHitEvent; 
+    public UnityEvent onHitEvent;
     // Start is called before the first frame update
-    
-
 
 
     void Start() {

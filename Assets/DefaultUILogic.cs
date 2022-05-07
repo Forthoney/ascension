@@ -101,7 +101,7 @@ public class DefaultUILogic : MonoBehaviour
     public void RevealDeathScreen()
     {
         HideDefaultScreen();
-        Time.timeScale = 0.001f; 
+        //Time.timeScale = 0.001f; 
         deathUI.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
     }
