@@ -17793,6 +17793,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1082124249}
+    - target: {fileID: 7606577994474377387, guid: 61ee751e3fea21848a1a37d5d0e5c879, type: 3}
+      propertyPath: m_Name
+      value: SecondRoom
+      objectReference: {fileID: 0}
     - target: {fileID: 7741882838353215460, guid: 61ee751e3fea21848a1a37d5d0e5c879, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -20378,7 +20382,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-96200
+  m_Name: pb_Mesh-105840
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
