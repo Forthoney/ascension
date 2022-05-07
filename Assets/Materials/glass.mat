@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-2031768640740984076
+--- !u!114 &-4489659452415615456
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: goo
-  m_Shader: {fileID: -6465566751694194690, guid: 404381a1c15b9c64091283bce3ddc0de, type: 3}
+  m_Name: glass
+  m_Shader: {fileID: -6465566751694194690, guid: f0aa39876353df648aa9e9419167cf78, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -89,9 +89,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_9187a3d51cf6498db5650991a4cceb3a: 1.5
-    - Vector1_982551711b874ae3ae284c15967f1be2: 1
-    - Vector1_dc881a9fe1834c26bb057ce06de804c2: 3.16
+    - Vector1_26a9394b7e7b47c79884242958ef879f: 8.42
+    - Vector1_5f82e8002ff148d2985e79fa3b02caa5: 2.8
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -119,10 +118,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_58fb4b83172a477985d442fa04d504e2: {r: 0.10065861, g: 0.5471698, b: 0.10669576, a: 0.09803922}
-    - Color_a90bc09f7a444469b9698d7fdd28e0aa: {r: 0.93684953, g: 0.94509804, b: 0.7176471, a: 0}
-    - Vector2_c9315aa7ce2745ff88de5b82c9f75480: {r: 3.38, g: 3.84, b: 12.51, a: 0}
-    - Vector2_d95ce198c17e4fd4a12f990b7f619724: {r: 0, g: 1.6, b: 0, a: 0}
+    - Color_afe9d4a726c44f37997ae9be433e4a9b: {r: 1, g: 1, b: 1, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

@@ -40721,18 +40721,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1078485677173964095, guid: 28ddc3204ae18a248949220c64d2763f, type: 3}
-      propertyPath: chargeLevels.Array.data[0].shootSound
-      value: 
-      objectReference: {fileID: 8300000, guid: ae1717033d0a4ce4ba1d69071384fe33, type: 3}
-    - target: {fileID: 1078485677173964095, guid: 28ddc3204ae18a248949220c64d2763f, type: 3}
-      propertyPath: chargeLevels.Array.data[1].shootSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 7514246d8e640bb45827307f1fd300b7, type: 3}
-    - target: {fileID: 1078485677173964095, guid: 28ddc3204ae18a248949220c64d2763f, type: 3}
-      propertyPath: chargeLevels.Array.data[2].shootSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 3ef71a9f91ecf984994908a4985d8c03, type: 3}
     - target: {fileID: 8329992066975207508, guid: 28ddc3204ae18a248949220c64d2763f, type: 3}
       propertyPath: m_Name
       value: Player
