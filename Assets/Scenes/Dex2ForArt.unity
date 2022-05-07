@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -25840,7 +25840,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-647676
+  m_Name: pb_Mesh-311848
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -59787,12 +59787,20 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 11291710}
+    - target: {fileID: 9204317460859843110, guid: 447b3b7a7271ca04a808202ea56cbee7, type: 3}
+      propertyPath: nextScene
+      value: YouWin
+      objectReference: {fileID: 0}
     - target: {fileID: 9204317460859843112, guid: 447b3b7a7271ca04a808202ea56cbee7, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 586520321}
     - target: {fileID: 9204317460859843112, guid: 447b3b7a7271ca04a808202ea56cbee7, type: 3}
       propertyPath: m_SelectedEdges.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9204317460859843112, guid: 447b3b7a7271ca04a808202ea56cbee7, type: 3}
+      propertyPath: m_SelectedFaces.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9204317460859843112, guid: 447b3b7a7271ca04a808202ea56cbee7, type: 3}
