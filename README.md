@@ -1,6 +1,7 @@
 # ASCENSION
 ### Brown RISD Game Devs Spring 2022
 **Download on [Itch!](https://https://brownrisdgames.itch.io/ascension)**
+
 ![Character Naruto Running](https://user-images.githubusercontent.com/85617794/167302945-d3bba184-d4c6-4706-a675-c1b06a002175.gif)
 
 Play as a cute space explorer in a zero-gravity space station! Use your ray gun to ascend through the twists and turns and knock evil aliens out of your way!
