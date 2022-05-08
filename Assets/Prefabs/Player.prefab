@@ -514,8 +514,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7291da9470db1ee38bed3eb263330e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  INITIAL_HEALTH: 3
-  maxHealth: 3
+  INITIAL_HEALTH: 2
+  maxHealth: 2
   deathEvent:
     m_PersistentCalls:
       m_Calls:
@@ -981,13 +981,25 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5218964277866474067, guid: 88104bfb134b95a4c90ba4dd9104d788, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5391688024337601483, guid: 88104bfb134b95a4c90ba4dd9104d788, type: 3}
       propertyPath: m_Name
       value: Heart3
       objectReference: {fileID: 0}
+    - target: {fileID: 5391688024337601483, guid: 88104bfb134b95a4c90ba4dd9104d788, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7035941987348867685, guid: 88104bfb134b95a4c90ba4dd9104d788, type: 3}
       propertyPath: m_Name
       value: Heart2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035941987348867685, guid: 88104bfb134b95a4c90ba4dd9104d788, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7265762049172759370, guid: 88104bfb134b95a4c90ba4dd9104d788, type: 3}
       propertyPath: m_Pivot.x

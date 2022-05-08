@@ -114,6 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   travelTime: 0.5
+  bounceSound: {fileID: 8300000, guid: 2a5dc5996711c854ebfbb35c437a981c, type: 3}
 --- !u!1001 &4166722509884066598
 PrefabInstance:
   m_ObjectHideFlags: 0
