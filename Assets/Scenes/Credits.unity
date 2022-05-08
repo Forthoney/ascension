@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -182,35 +182,35 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Nicole Strubinski: Producer, 3D Artist
 
-    Evan Samuel: Programmer,
+    Evan Samuel Mickelson: Programmer,
     Level Designer, and Producer
 
     Ayman Benjelloun Touimi:  Programmer
 
     Seong-Heon
-    Jung, Programmer
+    Jung: Programmer
 
-    Dexter McChesne: level and gameplay designer
+    Dexter McChesney: Level and Gameplay Designer
 
     Ivery
-    Chen: 3D environment artist
+    Chen: 3D Environment Artist
 
     Healey Koch: 3D Animator and Artist
 
     Catherine
-    Hack: 3D character artist
+    Hack: 3D Character Artist
 
-    Zhiying Shi: 3D asset artist
+    Zhiying Shi: 3D Asset Artist
 
-    Melody Yu:
-    UI/UX Designer and 3D Environmental Design
+    Melody Yu: UI/UX
+    Designer, 3D Environmental Designer
 
-    Christine Baek: Sound designer
+    Zackary Entwistle: Sound Designer
 
-    David
-    Jung: Sound designer
+    Christine
+    Baek: Sound Designer
 
-'
+    David Jung: Sound Designer'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
